@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_car_payment_country,car.payment,model_car_payment,car.group_car_country,1,1,1,1
+access_car_payment_follow,car.payment,model_car_payment,car.group_car_cashier,1,1,1,1
+access_car_payment_wallet,car.payment,model_car_payment,car.group_car_wallet,1,1,1,1
+access_car_payment_project,car.payment,model_car_payment,car.group_car_project,1,1,1,1
+
+access_car_payment_depreciation_country,car.payment.depreciation,model_car_payment_depreciation,car.group_car_country,1,1,1,1
+access_car_payment_depreciation_follow,car.payment.depreciation,model_car_payment_depreciation,car.group_car_cashier,1,1,1,1
+access_car_payment_depreciation_wallet,car.payment.depreciation,model_car_payment_depreciation,car.group_car_wallet,1,1,1,1
+access_car_payment_depreciation_project,car.payment.depreciation,model_car_payment_depreciation,car.group_car_project,1,1,1,1

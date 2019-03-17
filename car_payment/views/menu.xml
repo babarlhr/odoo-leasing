@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+
+
+        <menuitem
+            id="menu_car_payment"
+            name="Payments"
+            groups="car.group_car_wallet,car.group_car_project,car.group_car_country,car.group_car_cashier"
+            parent="car.menu_car_root"
+            action="car_payment.open_view_payment"
+            sequence="3"/>
+
+    </data>
+</odoo>

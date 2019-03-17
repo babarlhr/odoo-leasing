@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_depreciation_tree" model="ir.ui.view">
+            <field name="name">depreciation tree</field>
+            <field name="model">car.depreciation</field>
+            <field name="inherit_id" ref="car_contract.view_depreciation_tree"/>
+            <field name="arch" type="xml">
+                <field name="waiting_amount" position="after">
+                    <field name="remain_amount"/>
+                    <field name="collect_amount"/>
+                    <field name="collect_at"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_depreciation_kanban" model="ir.ui.view">
+            <field name="name">depreciation kanban</field>
+            <field name="model">car.depreciation</field>
+            <field name="inherit_id" ref="car_contract.view_depreciation_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//kanban/field[@name='waiting_amount']" position="after">
+                    <field name="remain_amount"/>
+                    <field name="collect_amount"/>
+                    <field name="collect_at"/>
+                </xpath>
+                <xpath expr="//strong/field[@name='waiting_amount']" position="after">
+                    <field name="remain_amount"/>
+                    <field name="collect_amount"/>
+                    <field name="collect_at"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
