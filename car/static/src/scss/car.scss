@@ -1,0 +1,21 @@
+.o_web_client .o_car_vehicle_kanban {
+
+    .o_follow_btn.o_following {
+        .o_unfollow {
+            display: none;
+        }
+
+        &:hover {
+            .o_following {
+                display: none;
+            }
+            .o_unfollow {
+                display: inline;
+            }
+        }
+    }
+
+    .o_vehicle_summary_icons > span {
+        white-space: nowrap;
+    }
+}

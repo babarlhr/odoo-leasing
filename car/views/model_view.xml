@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- model -->
+         <record id="view_model_form" model="ir.ui.view">
+            <field name="name">model form</field>
+            <field name="model">car.model</field>
+            <field name="arch" type="xml">
+                <form string="Model">
+                    <sheet>
+                        <field name="image" widget='image' class="oe_avatar" options='{"preview_image":"image"}'/>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" placeholder="model's Name"/>
+                            </h1>
+                        </div>
+                        <group col="6" colspan="6">
+                            <field name="brand_id"/>
+                            <field name="year"/>
+                            <field name="seats"/>
+                            <field name="doors"/>
+                            <field name="horsepower"/>
+                            <field name="odometer"/>
+                            <field name="transmission"/>
+                            <field name="fuel"/>
+                            <field name="co2"/>
+                        </group>
+                        <notebook>
+                            <page name="vehicle_ids" string="Vehicles" groups="">
+                                <group>
+                                    <field name="vehicle_ids" string="Vehicles" nolabel="1" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_model_tree" model="ir.ui.view">
+            <field name="name">model tree</field>
+            <field name="model">car.model</field>
+            <field name="arch" type="xml">
+                <tree string="Models">
+                    <field name="name"/>
+                    <field name="brand_id" />
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_model_filter" model="ir.ui.view">
+            <field name="name">model search</field>
+            <field name="model">car.model</field>
+            <field name="arch" type="xml">
+                <search string="Models">
+                    <field name="name" string="models" filter_domain="[('name','ilike',self)]"/>
+                    <field name="brand_id" />
+                    <field name="vehicle_ids" groups=""/>
+                    <group expand="0" string="Group By">
+                        <filter string="Company" name="groupby_company_id" domain="[]" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+                    </group>
+                </search>
+             </field>
+         </record>
+
+        <record id="car_kanban_view_models" model="ir.ui.view">
+            <field name="name">model kanban</field>
+            <field name="model">car.model</field>
+            <field name="priority">10</field>
+            <field name="arch" type="xml">
+                <kanban class="o_car_model_kanban">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_car_kanban_record">
+                                <div class="o_kanban_image_fill_left d-none d-md-block"
+                                     t-attf-style="background-image: url(#{kanban_image('car.model', 'image', record.id.raw_value)})"
+                                     role="img" style="max-height: 90px; max-width: 60px;"/>
+                                <div class="o_kanban_image d-md-none rounded-circle"
+                                     t-attf-style="background-image: url(#{kanban_image('car.model', 'image', record.id.raw_value)})"
+                                     role="img" style="max-height: 45px; max-width: 30px;"/>
+                                <div class="oe_kanban_details">
+                                    <div class="o_kanban_record_top">
+                                        <div class="o_kanban_record_headings">
+                                            <strong class="o_kanban_record_title">
+                                            <div class="oe_title">
+                                                <label for="name" class="oe_edit_only"/>
+                                                <h1>
+                                                    <field name="name"/>
+                                                </h1>
+                                            </div>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="open_view_model_list" model="ir.actions.act_window">
+            <field name="name">Models</field>
+            <field name="res_model">car.model</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" eval="False"/>
+            <field name="search_view_id" ref="view_model_filter"/>
+        </record>
+
+        <record id="open_view_model" model="ir.actions.act_window">
+            <field name="name">Models</field>
+            <field name="res_model">car.model</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="view_id" eval="False"/>
+            <field name="search_view_id" ref="view_model_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new model.
+              </p><p>
+              </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

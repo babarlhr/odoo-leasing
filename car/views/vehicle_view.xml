@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- vehicle -->
+        <record id="view_vehicle_form" model="ir.ui.view">
+            <field name="name">vehicle form</field>
+            <field name="model">car.vehicle</field>
+            <field name="arch" type="xml">
+                <form string="Vehicle">
+                    <header>
+                        <button name="set_created" states="validate" string="Cancel" type="object" class="oe_highlight"/>
+                        <button name="set_validate" states="created" string="Validate" type="object" class="oe_highlight" />
+                        <button name="set_assigned" states="validate" string="Assign" type="object" class="oe_highlight" />
+                        <button name="set_contracted" states="assigned" string="Contract" type="object" class="oe_highlight" />
+                        <field name="state" widget="statusbar" states="created,validate,assigned,contracted" />
+                    </header>
+                    <sheet>
+                        <field name="image" widget='image' class="oe_avatar" options='{"preview_image":"image"}'/>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" placeholder="vehicle's Name"/>
+                            </h1>
+                        </div>
+                        <notebook>
+                            <page name="general" string="General" groups="">
+                                <group col="6" colspan="6">
+                                    <field name="model_id"/>
+                                    <field name="acquisition_date"/>
+                                    <field name="year"/>
+                                    <field name="vin_sn"/>
+                                    <field name="license_plate"/>
+                                    <field name="color" widget="color"/>
+                                    <field name="buy_place"/>
+                                    <field name="seats"/>
+                                    <field name="doors"/>
+                                    <field name="horsepower"/>
+                                    <field name="odometer"/>
+                                    <field name="odometer_start"/>
+                                    <field name="transmission"/>
+                                    <field name="fuel"/>
+                                    <field name="co2"/>
+                                    <field name="cost"/>
+                                    <field name="assigned_id" string="Assigned To"/>
+                                    <field name="company_id" groups="base.group_multi_company"/>
+                                </group>
+                            </page>
+                            <page name="note" string="Note" groups="">
+                                <group>
+                                    <field name="note" string="Note" nolabel="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_vehicle_tree" model="ir.ui.view">
+            <field name="name">vehicle tree</field>
+            <field name="model">car.vehicle</field>
+            <field name="arch" type="xml">
+                <tree string="Vehicles">
+                    <field name="name"/>
+                    <field name="color" widget="color" options="{'readonly_mode': 'color'}"/>
+                    <field name="assigned_id" string="Assigned To"/>
+                    <field name="state"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_vehicle_filter" model="ir.ui.view">
+            <field name="name">vehicle search</field>
+            <field name="model">car.vehicle</field>
+            <field name="arch" type="xml">
+                <search string="Vehicles">
+                    <field name="name" string="vehicles" filter_domain="[('name','ilike',self)]"/>
+                    <field name="transmission" string="Transmission"/>
+                    <field name="fuel" string="fuel"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Company" name="groupby_company_id" domain="[]"
+                                context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+                        <filter string="State" name="groupby_state" domain="[]" context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="car_kanban_view_vehicles" model="ir.ui.view">
+            <field name="name">vehicle kanban</field>
+            <field name="model">car.vehicle</field>
+            <field name="priority">10</field>
+            <field name="arch" type="xml">
+                <kanban class="o_car_vehicle_kanban">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="cost"/>
+                    <field name="acquisition_date"/>
+                    <field name="state"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_car_kanban_record" style="padding: 10px">
+                                <div class="o_kanban_image_fill_left d-none d-md-block"
+                                     t-attf-style="background-image: url(#{kanban_image('car.vehicle', 'image', record.id.raw_value)})"
+                                     role="img"/>
+                                <div class="o_kanban_image d-md-none rounded-circle"
+                                     t-attf-style="background-image: url(#{kanban_image('car.vehicle', 'image', record.id.raw_value)})"
+                                     role="img"/>
+
+                                <div class="oe_kanban_details">
+                                    <div class="o_kanban_record_top">
+                                        <div class="o_kanban_record_headings">
+                                            <strong class="o_kanban_record_title">
+                                                <field name="name"/>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                    <!--<field name="category_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>-->
+                                    <ul>
+                                        <li t-if="record.acquisition_date.raw_value"><field name="acquisition_date"/></li>
+                                        <li t-if="record.model_id.raw_value"><field name="model_id"/></li>
+                                        <li t-if="record.state.raw_value"><field name="state"/></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="open_view_vehicle_list" model="ir.actions.act_window">
+            <field name="name">Vehicles</field>
+            <field name="res_model">car.vehicle</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" eval="False"/>
+            <field name="search_view_id" ref="view_vehicle_filter"/>
+        </record>
+
+        <record id="open_view_vehicle" model="ir.actions.act_window">
+            <field name="name">Vehicles</field>
+            <field name="res_model">car.vehicle</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="view_id" eval="False"/>
+            <field name="search_view_id" ref="view_vehicle_filter"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a new vehicle.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>
