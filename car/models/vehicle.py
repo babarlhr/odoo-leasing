@@ -24,7 +24,7 @@ class Vehicle(models.Model):
     color = fields.Char(string='Color', size=10)
     cost = fields.Float(string='Cost')
     odometer_start = fields.Integer(string='Start Odometer')
-    model_year = fields.Char(string='Year', size=4, related='model_id.year', store=True)
+    model_year = fields.Char(string='Year', size=4, related='model_id.model_year', store=True)
     seats = fields.Integer(string='Seats', related='model_id.seats', store=True)
     doors = fields.Integer(string='Doors', related='model_id.doors', store=True)
     horsepower = fields.Integer(string='Horse Power', related='model_id.horsepower', store=True)
