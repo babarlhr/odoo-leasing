@@ -61,7 +61,6 @@ class Vehicle(models.Model):
     @api.multi
     def set_assigned(self):
         action = self.env.ref('car.assign_user_action').read()[0]
-        self.state = 'assigned'
         return action
 
     @api.multi

@@ -29,3 +29,8 @@ class Contract(models.Model):
     customer_id = fields.Many2one(comodel_name='res.partner', string='Customer')
     image = fields.Binary("Photo", attachment=True, related='vehicle_id.image', readonly=True)
     flag = fields.Boolean(string='Flag')
+
+    @api.model
+    def create(self, vals_list):
+        vals_list['name'] = self.env['ir.sequence'].get('car.contract') or '/'
+        return super(Contract, self).create(vals_list)

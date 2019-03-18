@@ -15,4 +15,5 @@ class AssignUser(models.TransientModel):
 
     def validate(self):
         self.vehicle_id.assigned_id = self.user_id
+        self.vehicle_id.state = 'assigned'
 

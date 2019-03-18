@@ -9,7 +9,7 @@
             <field name="arch" type="xml">
                 <form string="Vehicle">
                     <header>
-                        <button name="set_created" states="validate" string="Cancel" type="object" class="oe_highlight"/>
+                        <button name="set_created" states="validate" string="Cancel" type="object" class=""/>
                         <button name="set_validate" states="created" string="Validate" type="object" class="oe_highlight" />
                         <button name="set_assigned" states="validate" string="Assign" type="object" class="oe_highlight" />
                         <button name="set_contracted" states="assigned" string="Contract" type="object" class="oe_highlight" />
@@ -42,8 +42,8 @@
                                     <field name="fuel"/>
                                     <field name="co2"/>
                                     <field name="cost"/>
-                                    <field name="assigned_id" string="Assigned To"/>
-                                    <field name="company_id" groups="base.group_multi_company"/>
+                                    <field name="assigned_id" string="Assigned To" readonly="1"/>
+                                    <field name="company_id" groups="base.group_multi_company" readonly="1"/>
                                 </group>
                             </page>
                             <page name="note" string="Note" groups="">
