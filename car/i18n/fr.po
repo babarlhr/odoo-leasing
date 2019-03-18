@@ -1,0 +1,445 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* car
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-17 21:59+0000\n"
+"PO-Revision-Date: 2019-03-18 09:01+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_vehicle__acquisition_date
+msgid "Acquisition Date"
+msgstr "Date d'acquisition"
+
+#. module: car
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_form
+msgid "Assign"
+msgstr "Assigner"
+
+#. module: car
+#: selection:car.vehicle,state:0
+msgid "Assigned"
+msgstr "Assigné"
+
+#. module: car
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_form
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_tree
+msgid "Assigned To"
+msgstr "Assigné à"
+
+#. module: car
+#: selection:car.model,transmission:0
+msgid "Automatic"
+msgstr "Automatique"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_model__brand_id
+#: model_terms:ir.ui.view,arch_db:car.view_brand_form
+msgid "Brand"
+msgstr "Marque"
+
+#. module: car
+#: model_terms:ir.ui.view,arch_db:car.view_brand_form
+msgid "Brand's Name"
+msgstr "Nom de marque"
+
+#. module: car
+#: model:ir.actions.act_window,name:car.open_view_brand
+#: model:ir.actions.act_window,name:car.open_view_brand_list
+#: model:ir.ui.menu,name:car.menu_car_brand
+#: model_terms:ir.ui.view,arch_db:car.view_brand_filter
+#: model_terms:ir.ui.view,arch_db:car.view_brand_tree
+msgid "Brands"
+msgstr "Marques"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_vehicle__buy_place
+msgid "Buy Place"
+msgstr "Lieu d'achat"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_model__co2
+#: model:ir.model.fields,field_description:car.field_car_vehicle__co2
+msgid "CO2"
+msgstr "CO2"
+
+#. module: car
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: car
+#: model:ir.ui.menu,name:car.menu_car_root
+msgid "Car"
+msgstr "Flotte"
+
+#. module: car
+#: model:ir.module.category,name:car.car_category
+msgid "Car System"
+msgstr "Système de flotte"
+
+#. module: car
+#: model:res.groups,name:car.group_car_cashier
+msgid "Cashier Manager"
+msgstr "Caissier"
+
+#. module: car
+#: model:res.groups,name:car.group_car_clearance
+msgid "Clearance Manager"
+msgstr "Responsable Dédouanement"
+
+#. module: car
+#: model_terms:ir.actions.act_window,help:car.open_view_brand
+msgid "Click to add a new brand."
+msgstr "Clic pour ajouter une nouvelle marque."
+
+#. module: car
+#: model_terms:ir.actions.act_window,help:car.open_view_model
+msgid "Click to add a new model."
+msgstr "Clic pour ajouter un nouveau modèle."
+
+#. module: car
+#: model_terms:ir.actions.act_window,help:car.open_view_vehicle
+msgid "Click to add a new vehicle."
+msgstr "Clic pour ajouter un nouveau véhicule."
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_vehicle__color
+msgid "Color"
+msgstr "Couleur"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_brand__company_id
+#: model:ir.model.fields,field_description:car.field_car_model__company_id
+#: model:ir.model.fields,field_description:car.field_car_vehicle__company_id
+#: model_terms:ir.ui.view,arch_db:car.view_brand_filter
+#: model_terms:ir.ui.view,arch_db:car.view_model_filter
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_filter
+msgid "Company"
+msgstr "Société"
+
+#. module: car
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_form
+msgid "Contract"
+msgstr "Contrat"
+
+#. module: car
+#: selection:car.vehicle,state:0
+msgid "Contracted"
+msgstr "Contracté"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_vehicle__cost
+msgid "Cost"
+msgstr "Coût"
+
+#. module: car
+#: model:res.groups,name:car.group_car_country
+msgid "Country Manager"
+msgstr "Responsable pays"
+
+#. module: car
+#: selection:car.vehicle,state:0
+msgid "Created"
+msgstr "Créé"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_brand__create_uid
+#: model:ir.model.fields,field_description:car.field_car_model__create_uid
+#: model:ir.model.fields,field_description:car.field_car_vehicle__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_brand__create_date
+#: model:ir.model.fields,field_description:car.field_car_model__create_date
+#: model:ir.model.fields,field_description:car.field_car_vehicle__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: car
+#: selection:car.model,fuel:0
+msgid "Diesel"
+msgstr "Diesel"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_brand__display_name
+#: model:ir.model.fields,field_description:car.field_car_model__display_name
+#: model:ir.model.fields,field_description:car.field_car_vehicle__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_model__doors
+#: model:ir.model.fields,field_description:car.field_car_vehicle__doors
+msgid "Doors"
+msgstr "Portes"
+
+#. module: car
+#: selection:car.model,fuel:0
+msgid "Electric"
+msgstr "Electrique"
+
+#. module: car
+#: model:res.groups,name:car.group_car_follow
+msgid "Follow Manager"
+msgstr "Agent de suivi"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_model__fuel
+#: model:ir.model.fields,field_description:car.field_car_vehicle__fuel
+msgid "Fuel Type"
+msgstr "Type de carburant"
+
+#. module: car
+#: selection:car.model,fuel:0
+msgid "Gasoline"
+msgstr "Essence"
+
+#. module: car
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_form
+msgid "General"
+msgstr "Général"
+
+#. module: car
+#: model_terms:ir.ui.view,arch_db:car.view_brand_filter
+#: model_terms:ir.ui.view,arch_db:car.view_model_filter
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_filter
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_model__horsepower
+#: model:ir.model.fields,field_description:car.field_car_vehicle__horsepower
+msgid "Horse Power"
+msgstr "Chevau"
+
+#. module: car
+#: selection:car.model,fuel:0
+msgid "Hybrid"
+msgstr "Hybride"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_brand__id
+#: model:ir.model.fields,field_description:car.field_car_model__id
+#: model:ir.model.fields,field_description:car.field_car_vehicle__id
+msgid "ID"
+msgstr "ID"
+
+#. module: car
+#: selection:car.model,odometer:0
+msgid "Kilometers"
+msgstr "Kilometres"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_brand____last_update
+#: model:ir.model.fields,field_description:car.field_car_model____last_update
+#: model:ir.model.fields,field_description:car.field_car_vehicle____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_brand__write_uid
+#: model:ir.model.fields,field_description:car.field_car_model__write_uid
+#: model:ir.model.fields,field_description:car.field_car_vehicle__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_brand__write_date
+#: model:ir.model.fields,field_description:car.field_car_model__write_date
+#: model:ir.model.fields,field_description:car.field_car_vehicle__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_vehicle__license_plate
+msgid "License Plate"
+msgstr "Immatriculation"
+
+#. module: car
+#: selection:car.model,transmission:0
+msgid "Manual"
+msgstr "Manuel"
+
+#. module: car
+#: selection:car.model,odometer:0
+msgid "Miles"
+msgstr "Miles"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_vehicle__model_id
+#: model_terms:ir.ui.view,arch_db:car.view_model_form
+msgid "Model"
+msgstr "Modèle"
+
+#. module: car
+#: model:ir.actions.act_window,name:car.open_view_model
+#: model:ir.actions.act_window,name:car.open_view_model_list
+#: model:ir.model.fields,field_description:car.field_car_brand__model_ids
+#: model:ir.ui.menu,name:car.menu_car_model
+#: model_terms:ir.ui.view,arch_db:car.view_brand_form
+#: model_terms:ir.ui.view,arch_db:car.view_model_filter
+#: model_terms:ir.ui.view,arch_db:car.view_model_tree
+msgid "Models"
+msgstr "Modèles"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_brand__name
+#: model:ir.model.fields,field_description:car.field_car_model__name
+#: model:ir.model.fields,field_description:car.field_car_vehicle__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_vehicle__note
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_form
+msgid "Note"
+msgstr "Note"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_model__odometer
+#: model:ir.model.fields,field_description:car.field_car_vehicle__odometer
+msgid "Odometer"
+msgstr "Odomètre"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_brand__image
+#: model:ir.model.fields,field_description:car.field_car_model__image
+#: model:ir.model.fields,field_description:car.field_car_vehicle__image
+msgid "Photo"
+msgstr "Photo"
+
+#. module: car
+#: model:res.groups,name:car.group_car_project
+msgid "Project Manager"
+msgstr "Responsable Projet"
+
+#. module: car
+#: model:res.groups,name:car.group_car_purchase
+msgid "Purchase Manager"
+msgstr "Responsable Achat"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_model__seats
+#: model:ir.model.fields,field_description:car.field_car_vehicle__seats
+msgid "Seats"
+msgstr "Sièges"
+
+#. module: car
+#: model:ir.ui.menu,name:car.menu_car_setting
+msgid "Setting"
+msgstr "Configuration"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_vehicle__odometer_start
+msgid "Start Odometer"
+msgstr "Odomètre de départ"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_vehicle__state
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_filter
+msgid "State"
+msgstr "État"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_model__transmission
+#: model:ir.model.fields,field_description:car.field_car_vehicle__transmission
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_filter
+msgid "Transmission"
+msgstr "Transmission"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_vehicle__assigned_id
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: car
+#: selection:car.vehicle,state:0
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_form
+msgid "Validate"
+msgstr "Validé"
+
+#. module: car
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_form
+msgid "Vehicle"
+msgstr "Véhicule"
+
+#. module: car
+#: model:ir.model,name:car.model_car_brand
+msgid "Vehicle's brand"
+msgstr "Marque"
+
+#. module: car
+#: model:ir.model,name:car.model_car_model
+msgid "Vehicle's model"
+msgstr "Modèle"
+
+#. module: car
+#: model:ir.actions.act_window,name:car.open_view_vehicle
+#: model:ir.actions.act_window,name:car.open_view_vehicle_list
+#: model:ir.model,name:car.model_car_vehicle
+#: model:ir.model.fields,field_description:car.field_car_model__vehicle_ids
+#: model:ir.ui.menu,name:car.menu_car_vehicle
+#: model_terms:ir.ui.view,arch_db:car.view_model_form
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_filter
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_tree
+msgid "Vehicles"
+msgstr "Véhicules"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_vehicle__vin_sn
+msgid "Vin SN"
+msgstr "No Chassis"
+
+#. module: car
+#: model:res.groups,name:car.group_car_wallet
+msgid "Wallet Manager"
+msgstr "Responsable Portefeuille"
+
+#. module: car
+#: model:ir.model.fields,field_description:car.field_car_model__year
+#: model:ir.model.fields,field_description:car.field_car_vehicle__year
+msgid "Year"
+msgstr "Année"
+
+#. module: car
+#: model_terms:ir.ui.view,arch_db:car.view_brand_filter
+msgid "brands"
+msgstr "Marques"
+
+#. module: car
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_filter
+msgid "fuel"
+msgstr "Carburant"
+
+#. module: car
+#: model_terms:ir.ui.view,arch_db:car.view_model_form
+msgid "model's Name"
+msgstr "Nom du modèle"
+
+#. module: car
+#: model_terms:ir.ui.view,arch_db:car.view_model_filter
+msgid "models"
+msgstr "Modèles"
+
+#. module: car
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_form
+msgid "vehicle's Name"
+msgstr "Nom du véhicule"
+
+#. module: car
+#: model_terms:ir.ui.view,arch_db:car.view_vehicle_filter
+msgid "vehicles"
+msgstr "Véhicules"

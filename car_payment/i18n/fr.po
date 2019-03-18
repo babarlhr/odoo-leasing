@@ -1,0 +1,184 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* car_payment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-18 08:14+0000\n"
+"PO-Revision-Date: 2019-03-18 09:15+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#. module: car_payment
+#: model_terms:ir.actions.act_window,help:car_payment.open_view_paymentdepreciation
+msgid "Click to add a new depreciation."
+msgstr "Clic pour ajouter un nouvelle échéance."
+
+#. module: car_payment
+#: model_terms:ir.actions.act_window,help:car_payment.open_view_payment
+msgid "Click to add a new payment."
+msgstr "Cliquez pour ajouter un nouveau paiement."
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_depreciation__collect_amount
+#: model:ir.model.fields,field_description:car_payment.field_car_payment__collect_amount
+#: model:ir.model.fields,field_description:car_payment.field_car_payment_depreciation__collect_amount
+msgid "Collect Amount"
+msgstr "Montant percu"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_depreciation__collect_at
+#: model:ir.model.fields,field_description:car_payment.field_car_payment__collect_at
+#: model:ir.model.fields,field_description:car_payment.field_car_payment_depreciation__collect_at
+msgid "Collect At"
+msgstr "Percu le"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_payment__company_id
+#: model:ir.model.fields,field_description:car_payment.field_car_payment_depreciation__company_id
+#: model_terms:ir.ui.view,arch_db:car_payment.view_payment_filter
+#: model_terms:ir.ui.view,arch_db:car_payment.view_paymentdepreciation_filter
+msgid "Company"
+msgstr "Société"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_payment__contract_id
+#: model:ir.model.fields,field_description:car_payment.field_car_payment_depreciation__contract_id
+#: model_terms:ir.ui.view,arch_db:car_payment.view_payment_filter
+#: model_terms:ir.ui.view,arch_db:car_payment.view_paymentdepreciation_filter
+msgid "Contract"
+msgstr "Contrat"
+
+#. module: car_payment
+#: model:ir.model,name:car_payment.model_car_payment
+msgid "Contract's payment"
+msgstr "Paiement du contrat"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_payment__create_uid
+#: model:ir.model.fields,field_description:car_payment.field_car_payment_depreciation__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_payment__create_date
+#: model:ir.model.fields,field_description:car_payment.field_car_payment_depreciation__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_payment__currency_id
+#: model:ir.model.fields,field_description:car_payment.field_car_payment_depreciation__currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_payment_depreciation__depreciation_id
+#: model_terms:ir.ui.view,arch_db:car_payment.view_paymentdepreciation_filter
+#: model_terms:ir.ui.view,arch_db:car_payment.view_paymentdepreciation_form
+msgid "Depreciation"
+msgstr "Echéance"
+
+#. module: car_payment
+#: model:ir.actions.act_window,name:car_payment.open_view_paymentdepreciation
+#: model:ir.actions.act_window,name:car_payment.open_view_paymentdepreciation_list
+#: model_terms:ir.ui.view,arch_db:car_payment.view_paymentdepreciation_filter
+#: model_terms:ir.ui.view,arch_db:car_payment.view_paymentdepreciation_tree
+msgid "Depreciations"
+msgstr "Echéances"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_payment__display_name
+#: model:ir.model.fields,field_description:car_payment.field_car_payment_depreciation__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: car_payment
+#: model_terms:ir.ui.view,arch_db:car_payment.view_payment_filter
+#: model_terms:ir.ui.view,arch_db:car_payment.view_paymentdepreciation_filter
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_payment__id
+#: model:ir.model.fields,field_description:car_payment.field_car_payment_depreciation__id
+msgid "ID"
+msgstr "ID"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_payment____last_update
+#: model:ir.model.fields,field_description:car_payment.field_car_payment_depreciation____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_payment__write_uid
+#: model:ir.model.fields,field_description:car_payment.field_car_payment_depreciation__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_payment__write_date
+#: model:ir.model.fields,field_description:car_payment.field_car_payment_depreciation__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_payment_depreciation__payment_id
+#: model_terms:ir.ui.view,arch_db:car_payment.view_payment_filter
+#: model_terms:ir.ui.view,arch_db:car_payment.view_payment_form
+#: model_terms:ir.ui.view,arch_db:car_payment.view_paymentdepreciation_filter
+msgid "Payment"
+msgstr "Paiement"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_payment__payment_depreciation_ids
+msgid "Payment and depreciation"
+msgstr "Paiement et échéance"
+
+#. module: car_payment
+#: model:ir.actions.act_window,name:car_payment.open_view_payment
+#: model:ir.actions.act_window,name:car_payment.open_view_payment_list
+#: model:ir.ui.menu,name:car_payment.menu_car_payment
+#: model_terms:ir.ui.view,arch_db:car_payment.view_payment_filter
+#: model_terms:ir.ui.view,arch_db:car_payment.view_payment_tree
+msgid "Payments"
+msgstr "Paiements"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_payment__image
+msgid "Photo"
+msgstr "Photo"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_payment__name
+msgid "Reference"
+msgstr "Référence"
+
+#. module: car_payment
+#: model:ir.model.fields,field_description:car_payment.field_car_depreciation__remain_amount
+msgid "Remain Amount"
+msgstr "Montant restant"
+
+#. module: car_payment
+#: model:ir.model,name:car_payment.model_car_depreciation
+msgid "contract's depreciation"
+msgstr "Echéance de contrat"
+
+#. module: car_payment
+#: model:ir.model,name:car_payment.model_car_payment_depreciation
+msgid "payment and depreciation evaluation"
+msgstr "Evaluation de paiement et échéance"
+
+#. module: car_payment
+#: model_terms:ir.ui.view,arch_db:car_payment.view_payment_form
+msgid "payment's reference"
+msgstr "Référence"

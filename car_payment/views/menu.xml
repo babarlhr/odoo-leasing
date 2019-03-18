@@ -3,8 +3,6 @@
     <data>
 
         <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
-
-
         <menuitem
             id="menu_car_payment"
             name="Payments"
