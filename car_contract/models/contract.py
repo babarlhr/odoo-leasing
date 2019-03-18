@@ -33,4 +33,6 @@ class Contract(models.Model):
     @api.model
     def create(self, vals_list):
         vals_list['name'] = self.env['ir.sequence'].get('car.contract') or '/'
-        return super(Contract, self).create(vals_list)
+        res = super(Contract, self).create(vals_list)
+        res.vehicle_id.state = 'contracted'
+        return res
