@@ -20,7 +20,7 @@ class ModelVehicle(models.Model):
     image = fields.Binary("Photo")
     company_id = fields.Many2one(comodel_name='res.company', string='Company', default=lambda self: self.env.user.company_id.id)
     brand_id = fields.Many2one(comodel_name='car.brand', string='Brand')
-    year = fields.Char(string='Year', size=4, required=True)
+    model_year = fields.Char(string='Year', size=4, required=True)
     seats = fields.Integer(string='Seats')
     doors = fields.Integer(string='Doors')
     horsepower = fields.Integer(string='Horse Power')

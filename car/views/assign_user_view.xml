@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="assign_user_form" model="ir.ui.view">
+            <field name="name">Assign Vehicle to User Form</field>
+            <field name="model">car.vehicle.assign</field>
+            <field name="arch" type="xml">
+                <form string="Assign vehicle to user">
+                    <sheet string="Assign vehicle to user">
+                        <group>
+                            <field name="vehicle_id"/>
+                            <field name="user_id"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="validate" string="Validate" class="oe_right oe_highlight"
+                                type="object"/>
+                        <button string="Cancel" class="oe_right" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="assign_user_action" model="ir.actions.act_window">
+            <field name="name">Assign Vehicle to User Action</field>
+            <field name="res_model">car.vehicle.assign</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <act_window id="assign_user_act_action" name="Assing to User" res_model="car.vehicle.assign"
+                src_model="car.vehicle" view_mode="form" target="new"/>
+    </data>
+</odoo>

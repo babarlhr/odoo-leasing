@@ -24,7 +24,7 @@ class Vehicle(models.Model):
     color = fields.Char(string='Color', size=10)
     cost = fields.Float(string='Cost')
     odometer_start = fields.Integer(string='Start Odometer')
-    year = fields.Char(string='Year', size=4, required=True, related='model_id.year', store=True)
+    model_year = fields.Char(string='Year', size=4, related='model_id.year', store=True)
     seats = fields.Integer(string='Seats', related='model_id.seats', store=True)
     doors = fields.Integer(string='Doors', related='model_id.doors', store=True)
     horsepower = fields.Integer(string='Horse Power', related='model_id.horsepower', store=True)
@@ -53,6 +53,20 @@ class Vehicle(models.Model):
     buy_place = fields.Char(string='Buy Place', size=200)
     company_id = fields.Many2one(comodel_name='res.company', string='Company', default=lambda self: self.env.user.company_id.id)
     assigned_id = fields.Many2one(comodel_name='res.users', string='Users')
+
+    @api.multi
+    def set_validate(self):
+        self.state = 'validate'
+
+    @api.multi
+    def set_assigned(self):
+        action = self.env.ref('car.assign_user_action').read()[0]
+        self.state = 'assigned'
+        return action
+
+    @api.multi
+    def set_contracted(self):
+        self.state = 'contracted'
 
 
 class Model(models.Model):

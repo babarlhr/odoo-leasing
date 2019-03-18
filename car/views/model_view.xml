@@ -18,7 +18,7 @@
                         </div>
                         <group col="6" colspan="6">
                             <field name="brand_id"/>
-                            <field name="year"/>
+                            <field name="model_year"/>
                             <field name="seats"/>
                             <field name="doors"/>
                             <field name="horsepower"/>

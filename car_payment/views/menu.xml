@@ -9,7 +9,7 @@
             groups="car.group_car_wallet,car.group_car_project,car.group_car_country,car.group_car_cashier"
             parent="car.menu_car_root"
             action="car_payment.open_view_payment"
-            sequence="3"/>
+            sequence="2"/>
 
     </data>
 </odoo>

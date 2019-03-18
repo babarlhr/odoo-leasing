@@ -38,7 +38,7 @@
             groups="car.group_car_cashier,car.group_car_purchase,car.group_car_follow,car.group_car_wallet,car.group_car_project,car.group_car_country,car.group_car_clearance"
             parent="menu_car_root"
             action="car.open_view_vehicle"
-            sequence="2"/>
+            sequence="3"/>
 
 
     </data>
