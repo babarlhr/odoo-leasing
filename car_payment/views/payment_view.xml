@@ -16,7 +16,7 @@
                             </h1>
                         </div>
                         <group col="4" colspan="4">
-                            <field name="contract_id" filter_domain="[('state', '=', 'pending')]"/>
+                            <field name="contract_id" domain="[('state', '=', 'pending')]"/>
                             <field name="currency_id"/>
                             <field name="collect_amount"/>
                             <field name="collect_at"/>

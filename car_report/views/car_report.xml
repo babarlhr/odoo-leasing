@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Default View for Car Dashboard, which is extended to make Dashboard View -->
+        <record model="ir.ui.view" id="car_report_view">
+            <field name="name">Car Dashboard</field>
+            <field name="model">car.dashboard</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!--<field name="name"/>-->
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Client Action For Menu CARDashboard -->
+        <record id="action_car_report" model="ir.actions.client">
+            <field name="name">Dashboard</field>
+            <field name="tag">car_report.dashboard</field>
+        </record>
+
+        <!-- Menu CAR Dashbaord -->
+        <menuitem id="menu_car_report"
+                  name="Dashboard"
+                  action="action_car_report"
+                  groups="car.group_car_project,car.group_car_wallet,car.group_car_purchase,car.group_car_clearance,car.group_car_country,car.group_car_follow,car.group_car_cashier"
+                  sequence="1"/>
+
+        <!-- CAR Dashboard Assests. We are making changes on assets backend -->
+        <template id="assets_backend" name="Car assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/car_report/static/src/js/car_report.js"/>
+                <script type="text/javascript" src="/car_report/static/lib/charts/Chart.min.js"/>
+                <script type="text/javascript" src="/car_report/static/lib/charts/Chart.bundle.min.js"/>
+                <!-- Datatable scripts -->
+                <script type="text/javascript" src="/car_report/static/lib/dataTables/datatables.min.js"/>
+                <script type="text/javascript" src="/car_report/static/lib/dataTables/dataTables.buttons.min.js"/>
+                <script type="text/javascript" src="/car_report/static/lib/dataTables/buttons.flash.min.js"/>
+                <script type="text/javascript" src="/car_report/static/lib/dataTables/buttons.html5.min.js"/>
+                <script type="text/javascript" src="/car_report/static/lib/dataTables/buttons.print.min.js"/>
+                <script type="text/javascript" src="/car_report/static/lib/dataTables/pdfmake.min.js"/>
+                <script type="text/javascript" src="/car_report/static/lib/dataTables/vfs_fonts.js"/>
+                <script type="text/javascript" src="/car_report/static/lib/dataTables/jszip.min.js"/>
+                <script type="text/javascript" src="/car_report/static/lib/dataTables/buttons.bootstrap.min.js"/>
+                <script type="text/javascript" src="/car_report/static/lib/dataTables/buttons.bootstrap4.min.js"/>
+                <script type="text/javascript" src="/car_report/static/lib/dataTables/buttons.colVis.min.js"/>
+                <!-- Scripts to export html to pdf -->
+                <script type="text/javascript" src="/car_report/static/lib/jsPdf/jspdf.min.js"/>
+                <script type="text/javascript" src="/car_report/static/lib/jsPdf/jspdf.debug.js"/>
+                <!-- Css scripts for dashboard view and table -->
+                <link rel="stylesheet" href="/car_report/static/src/css/dashboard.css"/>
+                <link rel="stylesheet" href="/car_report/static/lib/dataTables/datatables.min.css"/>
+                <link rel="stylesheet" href="/car_report/static/lib/dataTables/buttons.dataTables.min.css"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Car Contract Management',
+    'name': 'Car Contract',
     'version': '0.1',
     'summary': 'To Manage contract vehicles',
     'sequence': 30,
@@ -11,6 +11,7 @@ The specific and easy-to-use car system in Odoo allows you to keep track of your
     """,
     'category': 'car',
     'website': '',
+    'author': "Cedric FOWOUE",
     'images': ['images/accounts.jpeg'],
     'depends': ['car'],
     'data': [

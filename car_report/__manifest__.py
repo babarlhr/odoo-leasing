@@ -11,20 +11,17 @@ The specific and easy-to-use car system in Odoo allows you to keep track of your
     """,
     'category': 'car',
     'website': '',
+    'author': "Cedric FOWOUE",
     'images': ['images/accounts.jpeg'],
     'depends': ['car_contract', 'car_payment'],
     'data': [
-        # 'security/account_security.xml',
-        # 'security/ir.model.access.csv',
-        # 'data/brand.xml',
-    ],
-    'demo': [
-        # 'demo/account_demo.xml',
+        'security/ir.model.access.csv',
+        'views/car_report.xml',
     ],
     'qweb': [
-        # "static/src/xml/account_reconciliation.xml",
+        "static/src/xml/car_report.xml",
     ],
     'installable': True,
-    'application': True,
+    'application': False,
     'auto_install': False,
 }

@@ -12,6 +12,7 @@ The specific and easy-to-use car system in Odoo allows you to keep track of your
     """,
     'category': 'car',
     'website': '',
+    'author': "Cedric FOWOUE",
     'images': ['images/accounts.jpeg'],
     'depends': ['base', 'mail'],
     'data': [
