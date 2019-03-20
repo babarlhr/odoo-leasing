@@ -1,6 +1,7 @@
 # -*- coding -*-
 from odoo import models, fields, api
 from datetime import timedelta
+import odoo.addons.decimal_precision as dp
 
 
 class Contract(models.Model):
@@ -14,9 +15,9 @@ class Contract(models.Model):
     start_date = fields.Date()
     end_date = fields.Date()
     number_depreciation = fields.Integer()
-    amount_depreciation = fields.Float()
-    daily_depreciation = fields.Float()
-    weekly_depreciation = fields.Float()
+    amount_depreciation = fields.Float(string='Amount to depreciate', digits=dp.get_precision('Account'))
+    daily_depreciation = fields.Float(string='Daily Depreciation', digits=dp.get_precision('Account'))
+    weekly_depreciation = fields.Float(string='Weekly Depreciation', digits=dp.get_precision('Account'))
     state = fields.Selection([
         ('draft', 'Draft'),
         ('pending', 'Pending'),

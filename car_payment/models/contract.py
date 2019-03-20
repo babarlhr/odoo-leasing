@@ -1,14 +1,15 @@
 # -*- coding -*-
 from odoo import models, fields, api
+import odoo.addons.decimal_precision as dp
 
 
 class Contract(models.Model):
     _inherit = 'car.contract'
 
     payment_ids = fields.One2many(comodel_name='car.payment', inverse_name='contract_id', string='Payments')
-    payment_amount = fields.Float(compute='_get_total_payment', string='Total Payment')
-    remain_amount = fields.Float(compute='_get_total_payment', string='Total Remain')
-    late_amount = fields.Float(compute='_get_total_payment', string='Total Late')
+    payment_amount = fields.Float(compute='_get_total_payment', string='Total Payment', digits=dp.get_precision('Account'))
+    remain_amount = fields.Float(compute='_get_total_payment', string='Total Remain', digits=dp.get_precision('Account'))
+    late_amount = fields.Float(compute='_get_total_payment', string='Total Late', digits=dp.get_precision('Account'))
 
     @api.multi
     @api.depends('payment_ids')

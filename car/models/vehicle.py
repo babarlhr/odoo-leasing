@@ -2,6 +2,7 @@
 from odoo import models, fields, api
 from odoo import tools, _
 from odoo.modules.module import get_module_resource
+import odoo.addons.decimal_precision as dp
 
 
 class Vehicle(models.Model):
@@ -22,13 +23,13 @@ class Vehicle(models.Model):
     model_id = fields.Many2one(comodel_name='car.model', string='Model')
     acquisition_date = fields.Date()
     color = fields.Char(string='Color', size=10)
-    cost = fields.Float(string='Cost')
+    cost = fields.Float(string='Cost', digits=dp.get_precision('Account'))
     odometer_start = fields.Integer(string='Start Odometer')
     model_year = fields.Char(string='Year', size=4, related='model_id.model_year', store=True)
     seats = fields.Integer(string='Seats', related='model_id.seats', store=True)
     doors = fields.Integer(string='Doors', related='model_id.doors', store=True)
     horsepower = fields.Integer(string='Horse Power', related='model_id.horsepower', store=True)
-    co2 = fields.Float(string='CO2', related='model_id.co2', store=True)
+    co2 = fields.Float(string='CO2', related='model_id.co2', store=True, digits=dp.get_precision('Account'))
     odometer = fields.Selection([
         ('kilometers', 'Kilometers'),
         ('miles', 'Miles')

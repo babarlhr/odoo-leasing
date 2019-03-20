@@ -2,6 +2,7 @@
 from odoo import models, fields, api
 from datetime import timedelta, datetime
 from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
+import odoo.addons.decimal_precision as dp
 
 
 class Depreciation(models.Model):
@@ -14,7 +15,7 @@ class Depreciation(models.Model):
     company_id = fields.Many2one(comodel_name='res.company', string='Company', related='contract_id.company_id', store=True)
     waiting_at = fields.Date()
     currency_id = fields.Many2one(comodel_name='res.currency', string='Currency', related='contract_id.currency_id')
-    waiting_amount = fields.Float(string='Waiting Amount', related='contract_id.weekly_depreciation')
+    waiting_amount = fields.Float(string='Waiting Amount', related='contract_id.weekly_depreciation', digits=dp.get_precision('Account'))
     flag = fields.Boolean()
     state = fields.Selection([
         ('waiting', 'Waiting'),

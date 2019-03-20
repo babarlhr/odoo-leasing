@@ -1,5 +1,6 @@
 # -*- coding -*-
 from odoo import models, fields, api
+import odoo.addons.decimal_precision as dp
 
 
 class PaymentDepreciation(models.Model):
@@ -12,7 +13,7 @@ class PaymentDepreciation(models.Model):
     depreciation_id = fields.Many2one(comodel_name='car.depreciation', string='Depreciation')
     payment_id = fields.Many2one(comodel_name='car.payment', string='Payment')
     currency_id = fields.Many2one(comodel_name='res.currency', string='Currency', related='payment_id.currency_id')
-    collect_amount = fields.Float(string='Collect Amount')
+    collect_amount = fields.Float(string='Collect Amount', digits=dp.get_precision('Account'))
     collect_at = fields.Date(string='Collect At', related='payment_id.collect_at')
 
 
@@ -50,8 +51,8 @@ class Depreciation(models.Model):
     _inherit = 'car.depreciation'
 
     collect_at = fields.Date(compute='_get_collect_at', string='Collect At')
-    collect_amount = fields.Float(compute='_get_collect_amount', string='Collect Amount')
-    remain_amount = fields.Float(compute='_get_remain_amount', string='Remain Amount')
+    collect_amount = fields.Float(compute='_get_collect_amount', string='Collect Amount', digits=dp.get_precision('Account'))
+    remain_amount = fields.Float(compute='_get_remain_amount', string='Remain Amount', digits=dp.get_precision('Account'))
 
     @api.multi
     def _get_collect_at(self):

@@ -24,7 +24,7 @@ class ModelVehicle(models.Model):
     seats = fields.Integer(string='Seats')
     doors = fields.Integer(string='Doors')
     horsepower = fields.Integer(string='Horse Power')
-    co2 = fields.Float(string='CO2')
+    co2 = fields.Float(string='CO2', digits=dp.get_precision('Account'))
     odometer = fields.Selection([
         ('kilometers', 'Kilometers'),
         ('miles', 'Miles')
