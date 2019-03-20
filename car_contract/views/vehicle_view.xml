@@ -2,15 +2,14 @@
 <odoo>
     <data>
 
-        <record id="view_contract_form" model="ir.ui.view">
-            <field name="name">contract form</field>
-            <field name="model">car.contract</field>
-            <field name="inherit_id" ref="car_contract.view_contract_form"/>
+        <record id="view_vehicle_form" model="ir.ui.view">
+            <field name="name">vehicle form</field>
+            <field name="model">car.vehicle</field>
+            <field name="inherit_id" ref="car.view_vehicle_form"/>
             <field name="arch" type="xml">
                 <field name="image" position="before">
                     <div class="oe_button_box" name="button_box" groups="">
-                        <button class="oe_stat_button" type="object"
-                            name="show_contract" icon="fa-car">
+                        <button class="oe_stat_button" type="object" name="show_contract" icon="fa-car">
                             <field string="Contracts" name="contract_count" widget="statinfo" />
                         </button>
                         <!--<button name="action_view_all_rating" type="object" attrs="{'invisible': ['|', '|', ('rating_status', '=', 'no'), ('percentage_satisfaction_task', '=', -1)]}" class="oe_stat_button oe_percent" icon="fa-smile-o" groups="project.group_project_rating">

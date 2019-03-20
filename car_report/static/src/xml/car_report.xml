@@ -2,7 +2,7 @@
 <templates xml:space="preserve">
     <t t-name="car_report.dashboard">
         <!--View-->
-        <div class="car_dash col-xs-12 col-md-12 col-lg-12 col-sm-8">
+        <div class="car_dash col-xs-12 col-md-12 col-lg-12 col-sm-12">
             <!--<style type="text/css" t-if="! widget.isFirefox">-->
             <!--.o_control_panel.o_breadcrumb_full {-->
             <!--display: none;-->
@@ -83,6 +83,63 @@
                                         <span class="sub"><t t-esc="widget.car_data.contract"/></span>
                                     </div><!--/details-->
                                     <i class="fa fa-chevron-right fa-2x more"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" style="padding-top: 26px">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <a href="javascript:;" class="dashboard-block">
+                                    <div class="rotate">
+                                        <i class="fa fa-fw fa-money-bill"/>
+                                    </div>
+                                    <div class="details">
+                                        <span class="title">Contract total tmount</span>
+                                        <span class="sub">
+                                            <t t-esc="widget.car_data.amount"/> <t t-esc="widget.car_data.currency"/>
+                                        </span>
+                                    </div>
+                                    <!--/details-->
+                                    <!--<i class="fa fa-chevron-right fa-2x more"></i>-->
+                                </a><!--/dashboard-block1-->
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <a href="javascript:;" class="dashboard-block">
+                                    <div class="rotate">
+                                        <i class="fa fa-money-bill"></i>
+                                    </div>
+                                    <div class="details">
+                                        <span class="title">Contract collect amount</span>
+                                        <span class="sub"><t t-esc="widget.car_data.collect"/> <t t-esc="widget.car_data.currency"/></span>
+                                    </div><!--/details-->
+                                    <!--<i class="fa fa-chevron-right fa-2x more"></i>-->
+                                </a><!--/dashboard-block2-->
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <a href="javascript:;" class="dashboard-block">
+                                    <div class="rotate">
+                                        <i class="fa fa-money-bill"></i>
+                                    </div>
+                                    <div class="details">
+                                        <span class="title">Contract remain amount</span>
+                                        <span class="sub"><t t-esc="widget.car_data.remain"/> <t t-esc="widget.car_data.currency"/></span>
+                                    </div><!--/details-->
+                                    <!--<i class="fa fa-chevron-right fa-2x more"></i>-->
+                                </a><!--/dashboard-block3-->
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <a href="javascript:;" class="dashboard-block">
+                                    <div class="rotate">
+                                        <i class="fa fa-fw fa-money-bill"></i>
+                                    </div>
+                                    <div class="details">
+                                        <span class="title">Contract late amount</span>
+                                        <span class="sub"><t t-esc="widget.car_data.late"/> <t t-esc="widget.car_data.currency"/></span>
+                                    </div><!--/details-->
+                                    <!--<i class="fa fa-chevron-right fa-2x more"></i>-->
                                 </a>
                             </div>
                         </div>

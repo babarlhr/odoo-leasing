@@ -23,9 +23,11 @@ class CarDashboard(models.Model):
         p = self.get_partners_info()
         pay = self.get_payments_info()
         c = self.get_contracts_info()
-        return [{'vehicle': v, 'partner': p, 'payment': pay, 'contract': c}]
+        a = self.get_contracts_amount()
+        currency = self.env.user.company_id.currency_id.name
+        a.update({'vehicle': v, 'partner': p, 'payment': pay, 'contract': c, 'currency': currency})
+        return [a]
 
-    @api.model
     def get_vehicles_info(self):
         vehicles = self.env['car.vehicle'].search(['|',
             ('company_id', '=', self.env.user.company_id.id),
@@ -33,7 +35,6 @@ class CarDashboard(models.Model):
         ])
         return len(vehicles)
 
-    @api.model
     def get_partners_info(self):
         partners = self.env['res.partner'].search(['|',
             ('company_id', '=', self.env.user.company_id.id),
@@ -41,7 +42,6 @@ class CarDashboard(models.Model):
         ])
         return len(partners)
 
-    @api.model
     def get_payments_info(self):
         payments = self.env['car.payment'].search(['|',
             ('company_id', '=', self.env.user.company_id.id),
@@ -49,7 +49,6 @@ class CarDashboard(models.Model):
         ])
         return len(payments)
 
-    @api.model
     def get_contracts_info(self):
         contracts = self.env['car.contract'].search(['|',
             ('company_id', '=', self.env.user.company_id.id),
@@ -57,10 +56,20 @@ class CarDashboard(models.Model):
         ])
         return len(contracts)
 
-    @api.model
-    def get_contracts_total_amount(self):
+    def get_contracts_amount(self):
         contracts = self.env['car.contract'].search(['|',
             ('company_id', '=', self.env.user.company_id.id),
             ('company_id', 'in', self.env.user.company_id.child_ids.ids)
         ])
-        return len(contracts)
+        company_currency = self.env.user.company_id.currency_id
+        remain = 0.0
+        collect = 0.0
+        amount = 0.0
+        late = 0.0
+        for c in contracts:
+            currency = c.currency_id
+            remain += currency.compute(c.remain_amount, company_currency)
+            collect += currency.compute(c.payment_amount, company_currency)
+            amount += currency.compute(c.amount_depreciation, company_currency)
+            late += currency.compute(c.late_amount, company_currency)
+        return {'remain': remain, 'collect': collect, 'amount': amount, 'late': late}

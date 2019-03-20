@@ -26,7 +26,7 @@
                             <page name="general" string="General" groups="">
                                 <group col="6" colspan="6">
                                     <field name="vehicle_id" domain="[('state', '=', 'assigned')]"/>
-                                    <field name="customer_id"/>
+                                    <field name="customer_id" domain="[('is_customer', '=', True)]"/>
                                     <field name="currency_id"/>
                                     <field name="contract_date"/>
                                     <field name="start_date"/>

@@ -11,7 +11,7 @@ class Depreciation(models.Model):
     # _inherit = 'mail.thread'
 
     contract_id = fields.Many2one(comodel_name='car.contract', string='Contract')
-    company_id = fields.Many2one(comodel_name='res.company', string='Company')
+    company_id = fields.Many2one(comodel_name='res.company', string='Company', related='contract_id.company_id', store=True)
     waiting_at = fields.Date()
     currency_id = fields.Many2one(comodel_name='res.currency', string='Currency', related='contract_id.currency_id')
     waiting_amount = fields.Float(string='Waiting Amount', related='contract_id.weekly_depreciation')

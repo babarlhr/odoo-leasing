@@ -2,7 +2,7 @@
 <odoo>
     <data>
 
-        <record id="view_depreciation_form" model="ir.ui.view">
+        <!--<record id="view_depreciation_form" model="ir.ui.view">
             <field name="name">depreciation form</field>
             <field name="model">car.depreciation</field>
             <field name="arch" type="xml">
@@ -14,12 +14,13 @@
                             <field name="customer_id"/>
                             <field name="currency_id"/>
                             <field name="waiting_amount"/>
+                            <field name="waiting_at"/>
                             <field name="company_id"/>
                         </group>
                     </sheet>
                 </form>
             </field>
-        </record>
+        </record>-->
 
         <record id="view_depreciation_tree" model="ir.ui.view">
             <field name="name">depreciation tree</field>
@@ -31,6 +32,7 @@
                     <field name="customer_id"/>
                     <field name="currency_id"/>
                     <field name="waiting_amount"/>
+                    <field name="waiting_at"/>
                     <field name="state"/>
                     <field name="company_id" groups="base.group_multi_company"/>
                 </tree>
@@ -60,7 +62,7 @@
             </field>
         </record>
 
-        <record id="view_depreciation_kanban" model="ir.ui.view">
+        <!--<record id="view_depreciation_kanban" model="ir.ui.view">
             <field name="name">depreciation kanban</field>
             <field name="model">car.depreciation</field>
             <field name="arch" type="xml">
@@ -85,18 +87,18 @@
                                         <span t-if="record.state.raw_value" class="o_kanban_record_subtitle"><field name="state"/></span>
                                     </div>
                                 </div>
-                                <!--<field name="category_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                &lt;!&ndash;<field name="category_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                                 <ul>
                                     <li id="last_login"/>
                                     <li t-if="record.work_location.raw_value"><field name="work_location"/></li>
-                                </ul>-->
+                                </ul>&ndash;&gt;
                             </div>
                         </div>
                         </t>
                     </templates>
                 </kanban>
             </field>
-        </record>
+        </record>-->
 
         <record id="open_view_depreciation_list" model="ir.actions.act_window">
             <field name="name">Depreciations</field>
@@ -111,7 +113,7 @@
             <field name="name">Depreciations</field>
             <field name="res_model">car.depreciation</field>
             <field name="view_type">form</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_mode">tree</field>
             <field name="domain">[]</field>
             <field name="context">{}</field>
             <field name="view_id" eval="False"/>

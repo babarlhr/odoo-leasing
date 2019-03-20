@@ -13,5 +13,13 @@
             action="car_contract.open_view_contract"
             sequence="1"/>
 
+        <menuitem
+            id="menu_car_depreciation"
+            name="Depreciations"
+            groups="car.group_car_wallet,car.group_car_project,car.group_car_country"
+            parent="car.menu_car_root"
+            action="car_contract.open_view_depreciation"
+            sequence="4"/>
+
     </data>
 </odoo>

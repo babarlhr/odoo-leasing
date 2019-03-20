@@ -9,6 +9,8 @@
             <field name="arch" type="xml">
                 <field name="weekly_depreciation" position="after">
                     <field name="payment_amount"/>
+                    <field name="remain_amount"/>
+                    <field name="late_amount"/>
                 </field>
             </field>
         </record>
@@ -18,7 +20,7 @@
             <field name="model">car.contract</field>
             <field name="inherit_id" ref="car_contract.view_contract_kanban"/>
             <field name="arch" type="xml">
-                <xpath expr="//ul/li/field[@name='weekly_depreciation']/../../" position="after">
+                <xpath expr="//ul/li/field[@name='weekly_depreciation']/.." position="after">
                     <li t-if="record.payment_amount.raw_value"><field name="payment_amount"/></li>
                 </xpath>
             </field>
