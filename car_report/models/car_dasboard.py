@@ -66,10 +66,11 @@ class CarDashboard(models.Model):
         collect = 0.0
         amount = 0.0
         late = 0.0
+        currency_env = self.env['res.currency']
         for c in contracts:
             currency = c.currency_id
-            remain += currency.compute(c.remain_amount, company_currency)
-            collect += currency.compute(c.payment_amount, company_currency)
-            amount += currency.compute(c.amount_depreciation, company_currency)
-            late += currency.compute(c.late_amount, company_currency)
+            remain += currency_env._compute(currency, company_currency, c.remain_amount)
+            collect += currency_env._compute(currency, company_currency, c.payment_amount)
+            amount += currency_env._compute(currency, company_currency, c.amount_depreciation)
+            late += currency_env._compute(currency, company_currency, c.late_amount)
         return {'remain': remain, 'collect': collect, 'amount': amount, 'late': late}
