@@ -20,6 +20,7 @@ The specific and easy-to-use car system in Odoo allows you to keep track of your
         'views/payment_view.xml',
         'views/payment_depreciation_view.xml',
         'views/depreciation_view.xml',
+        'views/contract_view.xml',
         'views/menu.xml',
     ],
     'demo': [

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_contract_form" model="ir.ui.view">
+            <field name="name">contract form</field>
+            <field name="model">car.contract</field>
+            <field name="inherit_id" ref="car_contract.view_contract_form"/>
+            <field name="arch" type="xml">
+                <field name="image" position="before">
+                    <div class="oe_button_box" name="button_box" groups="">
+                        <button class="oe_stat_button" type="object"
+                            name="show_contract" icon="fa-car">
+                            <field string="Contracts" name="contract_count" widget="statinfo" />
+                        </button>
+                        <!--<button name="action_view_all_rating" type="object" attrs="{'invisible': ['|', '|', ('rating_status', '=', 'no'), ('percentage_satisfaction_task', '=', -1)]}" class="oe_stat_button oe_percent" icon="fa-smile-o" groups="project.group_project_rating">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="percentage_satisfaction_task" nolabel="1"/>
+                                </span>
+                                <span class="o_stat_text">
+                                    % On <field readonly="1" name="label_tasks" options="{'label_field': 'label_tasks'}" />
+                                </span>
+                            </div>
+                        </button>
+                        <button name="toggle_active" type="object"
+                                confirm="(Un)archiving a project automatically (un)archives its tasks. Do you want to proceed?"
+                                class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                options='{"terminology": "archive"}'/>
+                        </button>-->
+                    </div>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

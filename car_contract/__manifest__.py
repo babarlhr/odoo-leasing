@@ -19,6 +19,7 @@ The specific and easy-to-use car system in Odoo allows you to keep track of your
         'security/ir.model.access.csv',
         'views/contract_view.xml',
         'views/depreciation_view.xml',
+        'views/vehicle_view.xml',
         'views/menu.xml',
         'data/contract_data.xml',
     ],

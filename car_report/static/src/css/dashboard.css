@@ -39,7 +39,8 @@ i.fa.fa-2x.fa-file-pdf-o {
 }
 /*Dashboard head blocks*/
 .dashboard-block, .dashboard-block:hover, .dashboard-block:active, .dashboard-block:focus {
-    color: #606060;
+    /*color: #606060;*/
+    color: #FFFFFF;
     text-decoration: none;
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
     outline: none;
@@ -48,7 +49,8 @@ i.fa.fa-2x.fa-file-pdf-o {
     position: relative;
     display: block;
     padding: 15px 20px;
-    background-color: rgba(0, 0, 0, 0.2);
+    /*background-color: rgba(0, 0, 0, 0.2);*/
+    background-color: #7C7BAD;
     opacity:0.9;
     overflow: hidden;
     margin-bottom:5px;

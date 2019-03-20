@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_contract_tree" model="ir.ui.view">
+            <field name="name">contract tree</field>
+            <field name="model">car.contract</field>
+            <field name="inherit_id" ref="car_contract.view_contract_tree"/>
+            <field name="arch" type="xml">
+                <field name="weekly_depreciation" position="after">
+                    <field name="payment_amount"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_contract_kanban" model="ir.ui.view">
+            <field name="name">contract kanban</field>
+            <field name="model">car.contract</field>
+            <field name="inherit_id" ref="car_contract.view_contract_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//ul/li/field[@name='weekly_depreciation']/../../" position="after">
+                    <li t-if="record.payment_amount.raw_value"><field name="payment_amount"/></li>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

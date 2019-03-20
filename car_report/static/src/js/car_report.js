@@ -31,14 +31,14 @@ odoo.define('car_report.dashboard', function (require) {
         },
         init: function (parent, context) {
             this._super(parent, context);
-            var employee_data = [];
+            var car_data = [];
             var self = this;
             if (context.tag == 'car_report.dashboard') {
                 self._rpc({
                     model: 'car.dashboard',
                     method: 'get_data_info',
                 }, []).then(function (result) {
-                    self.employee_data = result[0]
+                    self.car_data = result[0];
                 }).done(function () {
                     self.render();
                     self.href = window.location.href;
