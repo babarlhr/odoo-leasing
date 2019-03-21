@@ -2,6 +2,7 @@
 from odoo import models, fields, api
 from odoo import tools, _
 from odoo.modules.module import get_module_resource
+import odoo.addons.decimal_precision as dp
 
 
 class ModelVehicle(models.Model):

@@ -29,7 +29,7 @@ class Vehicle(models.Model):
     seats = fields.Integer(string='Seats', related='model_id.seats', store=True)
     doors = fields.Integer(string='Doors', related='model_id.doors', store=True)
     horsepower = fields.Integer(string='Horse Power', related='model_id.horsepower', store=True)
-    co2 = fields.Float(string='CO2', related='model_id.co2', store=True, digits=dp.get_precision('Account'))
+    co2 = fields.Float(string='CO2', related='model_id.co2', store=True)
     odometer = fields.Selection([
         ('kilometers', 'Kilometers'),
         ('miles', 'Miles')
