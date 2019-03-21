@@ -46,5 +46,5 @@ class Contract(models.Model):
             'view_type': 'form',
             'view_mode': 'tree,form',
             'target': 'current',
-            'context': "{ 'search_default_contract_id': [%s], 'default_contract_id': '%s'}"  % (self.id, self.id)
+            'context': "{ 'search_default_contract_id': [%s], 'default_contract_id': '%s'}" % (self.id, self.id)
         }
