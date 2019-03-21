@@ -3,7 +3,7 @@
     <data>
 
         <record id="car_contract_seq_id" model="ir.sequence">
-            <field name="name">Car Sequence</field>
+            <field name="name">Car Contract Sequence</field>
             <field name="code">car.contract</field>
             <field name="prefix">CONT%(year)s%(month)s</field>
             <field name="padding">5</field>

@@ -33,6 +33,14 @@
             sequence="1"/>
 
         <menuitem
+            id="menu_car_customer"
+            name="Customers"
+            groups="car.group_car_follow,car.group_car_wallet,car.group_car_project,car.group_car_country"
+            parent="menu_car_root"
+            action="base.action_partner_customer_form"
+            sequence="4"/>
+
+        <menuitem
             id="menu_car_vehicle"
             name="Vehicles"
             groups="car.group_car_cashier,car.group_car_purchase,car.group_car_follow,car.group_car_wallet,car.group_car_project,car.group_car_country,car.group_car_clearance"

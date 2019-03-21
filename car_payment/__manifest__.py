@@ -15,7 +15,7 @@ The specific and easy-to-use car system in Odoo allows you to keep track of your
     'images': ['images/accounts.jpeg'],
     'depends': ['car_contract'],
     'data': [
-        # 'security/account_security.xml',
+        'security/security.xml',
         'security/ir.model.access.csv',
         'views/payment_view.xml',
         'views/payment_depreciation_view.xml',

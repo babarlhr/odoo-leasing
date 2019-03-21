@@ -68,6 +68,12 @@ class Vehicle(models.Model):
     def set_contracted(self):
         self.state = 'contracted'
 
+    @api.model
+    def create(self, vals_list):
+        vals_list['name'] = self.env['ir.sequence'].get('car.vehicle') or '/'
+        res = super(Vehicle, self).create(vals_list)
+        return res
+
 
 class Model(models.Model):
 

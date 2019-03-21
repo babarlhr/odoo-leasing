@@ -11,6 +11,8 @@
                         <button name="set_close" states="pending" string="Close" type="object" class="oe_highlight"/>
                         <button name="set_draft" states="pending" string="Draft" type="object" />
                         <button name="set_cancel" states="pending" string="Cancel" type="object" />
+                        <button name="get_contract_content" states="pending" string="Contract Document" type="object" class="oe_highlight" />
+                        <button name="get_contract_content" states="draft" string="Contract Document" type="object" class="oe_highlight" />
                         <button name="generate_depreciation" states="draft" string="Generate Depreciation" type="object" class="oe_highlight" />
                         <field name="state" widget="statusbar" states="draft,pending,close,cancel" />
                     </header>
@@ -26,7 +28,7 @@
                             <page name="general" string="General" groups="">
                                 <group col="6" colspan="6">
                                     <field name="vehicle_id" domain="[('state', '=', 'assigned')]"/>
-                                    <field name="customer_id" domain="[('is_customer', '=', True)]"/>
+                                    <field name="customer_id" domain="[('customer', '=', True)]"/>
                                     <field name="currency_id"/>
                                     <field name="contract_date"/>
                                     <field name="start_date"/>
@@ -37,13 +39,28 @@
                                     <field name="amount_depreciation"/>
                                     <field name="weekly_depreciation"/>
                                     <field name="daily_depreciation"/>
-                                    <!--<field name="flag"/>-->
+                                </group>
+                                <group col="4" colspan="4">
+                                    <field name="contract_file" string="Document" widget="binary" filename="file_name" readonly="1"/>
+                                    <field name="contract_file_validate" widget="binary" filename="file_validate_name" />
                                     <field name="company_id" groups="base.group_multi_company"/>
+                                    <field name="file_name" invisible="1" />
+                                    <field name="file_validate_name" invisible="1" />
                                 </group>
                             </page>
                             <page name="depreciation_ids" string="Depreciations" groups="">
                                 <group>
                                     <field name="depreciation_ids" string="Depreciations" readonly="1" nolabel="1"/>
+                                </group>
+                            </page>
+                            <page name="document" string="Document" groups="">
+                                <group>
+                                    <!--<group>
+                                        <button name="print_pdf_contract" string="Print" type="object" class="oe_highlight" />
+                                    </group>-->
+                                    <group>
+                                        <field name="content" string="Document" readonly="1" nolabel="1"/>
+                                    </group>
                                 </group>
                             </page>
                         </notebook>

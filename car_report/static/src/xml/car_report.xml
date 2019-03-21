@@ -37,7 +37,7 @@
                             <div class="col-md-3 col-sm-6">
                                 <a href="javascript:;" class="dashboard-block vehicle">
                                     <div class="rotate">
-                                        <i class="fa fa-fw fa-car"/>
+                                        <i class="fa fa-car"/>
                                     </div>
                                     <div class="details">
                                         <span class="title">Vehicles</span>
@@ -76,7 +76,7 @@
                             <div class="col-md-3 col-sm-6">
                                 <a href="javascript:;" class="dashboard-block contract">
                                     <div class="rotate">
-                                        <i class="fa fa-fw fa-book"></i>
+                                        <i class="fa fa-book"></i>
                                     </div>
                                     <div class="details">
                                         <span class="title">Contracts</span>
@@ -94,7 +94,7 @@
                             <div class="col-md-3 col-sm-6">
                                 <a href="javascript:;" class="dashboard-block">
                                     <div class="rotate">
-                                        <i class="fa fa-fw fa-money-bill"/>
+                                        <i class="fa fa-fw fa-money"/>
                                     </div>
                                     <div class="details">
                                         <span class="title">Contract total tmount</span>
@@ -109,7 +109,7 @@
                             <div class="col-md-3 col-sm-6">
                                 <a href="javascript:;" class="dashboard-block">
                                     <div class="rotate">
-                                        <i class="fa fa-money-bill"></i>
+                                        <i class="fa fa-money"></i>
                                     </div>
                                     <div class="details">
                                         <span class="title">Contract collect amount</span>
@@ -121,7 +121,7 @@
                             <div class="col-md-3 col-sm-6">
                                 <a href="javascript:;" class="dashboard-block">
                                     <div class="rotate">
-                                        <i class="fa fa-money-bill"></i>
+                                        <i class="fa fa-money"></i>
                                     </div>
                                     <div class="details">
                                         <span class="title">Contract remain amount</span>
@@ -133,7 +133,7 @@
                             <div class="col-md-3 col-sm-6">
                                 <a href="javascript:;" class="dashboard-block">
                                     <div class="rotate">
-                                        <i class="fa fa-fw fa-money-bill"></i>
+                                        <i class="fa fa-fw fa-money"></i>
                                     </div>
                                     <div class="details">
                                         <span class="title">Contract late amount</span>
@@ -141,6 +141,23 @@
                                     </div><!--/details-->
                                     <!--<i class="fa fa-chevron-right fa-2x more"></i>-->
                                 </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <a href="javascript:;" class="dashboard-block">
+                                    <div class="rotate">
+                                        <i class="fa fa-fw fa-money"/>
+                                    </div>
+                                    <div class="details">
+                                        <span class="title">Late amount percent</span>
+                                        <span class="sub">
+                                            <t t-esc="widget.car_data.late_percent"/> %
+                                        </span>
+                                    </div>
+                                    <!--/details-->
+                                    <!--<i class="fa fa-chevron-right fa-2x more"></i>-->
+                                </a><!--/dashboard-block1-->
                             </div>
                         </div>
                     </div>

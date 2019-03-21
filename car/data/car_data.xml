@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="car_vehicle_seq_id" model="ir.sequence">
+            <field name="name">Car Vehicle Sequence</field>
+            <field name="code">car.vehicle</field>
+            <field name="prefix">VEH%(year)s%(month)s</field>
+            <field name="padding">5</field>
+            <!--<field name="suffix">suffix</field>-->
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_document_form" model="ir.ui.view">
+            <field name="name">document form</field>
+            <field name="model">car.document</field>
+            <field name="arch" type="xml">
+                <form string="Document">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box" groups="">
+                            <button name="toggle_active" type="object"
+                                class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button"
+                                    options='{"terminology": "archive"}'/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" placeholder="document's name"/>
+                            </h1>
+                        </div>
+                        <group string="Document template">
+                            <field name="content" nolabel="1"/>
+                        </group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <div class="">
+                            <h1>Help</h1>
+                            <p>
+                                Document parameters using for generate a new contract file based on this content are:
+                                <ul>
+                                    <li>contract_name: for contract reference</li>
+                                    <li>contract_start_date: for validating start date of contract</li>
+                                    <li>contract_end_date: for validating end date of contract</li>
+                                    <li>contract_customer: for contract customer</li>
+                                    <li>contract_vehicle_name: for contract vehicle reference</li>
+                                    <li>contract_vehicle_vinsn: for contract vehicle vin sn</li>
+                                </ul>
+                            </p>
+
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_document_tree" model="ir.ui.view">
+            <field name="name">document tree</field>
+            <field name="model">car.document</field>
+            <field name="arch" type="xml">
+                <tree string="Documents">
+                    <field name="name"/>
+                    <field name="active"/>
+                    <field name="create_date"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_document_filter" model="ir.ui.view">
+            <field name="name">document search</field>
+            <field name="model">car.document</field>
+            <field name="arch" type="xml">
+                <search string="Documents">
+                    <field name="name" string="Document" filter_domain="[('name','ilike',self)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Company" name="groupby_company_id" domain="[]"
+                                context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+                        <filter string="State" name="groupby_active" domain="[]" context="{'group_by':'active'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="open_view_document" model="ir.actions.act_window">
+            <field name="name">Documents</field>
+            <field name="res_model">car.document</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="view_id" eval="False"/>
+            <field name="search_view_id" ref="view_document_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new document.
+              </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

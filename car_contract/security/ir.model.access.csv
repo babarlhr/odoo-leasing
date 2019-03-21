@@ -8,3 +8,8 @@ access_car_depreciation_country,car.depreciation,model_car_depreciation,car.grou
 access_car_depreciation_follow,car.depreciation,model_car_depreciation,car.group_car_follow,1,1,1,1
 access_car_depreciation_wallet,car.depreciation,model_car_depreciation,car.group_car_wallet,1,1,1,1
 access_car_depreciation_project,car.depreciation,model_car_depreciation,car.group_car_project,1,1,1,1
+
+access_car_document_country,car.document,model_car_document,car.group_car_country,1,1,1,1
+access_car_document_follow,car.document,model_car_document,car.group_car_follow,1,1,1,1
+access_car_document_wallet,car.document,model_car_document,car.group_car_wallet,1,1,1,1
+access_car_document_project,car.document,model_car_document,car.group_car_project,1,1,1,1

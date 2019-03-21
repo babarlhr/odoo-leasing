@@ -19,7 +19,15 @@
             groups="car.group_car_wallet,car.group_car_project,car.group_car_country"
             parent="car.menu_car_root"
             action="car_contract.open_view_depreciation"
-            sequence="4"/>
+            sequence="5"/>
+
+        <menuitem
+            id="menu_car_document"
+            name="Documents"
+            groups="car.group_car_wallet,car.group_car_project,car.group_car_country,car.group_car_follow"
+            parent="car.menu_car_setting"
+            action="car_contract.open_view_document"
+            sequence="3"/>
 
     </data>
 </odoo>

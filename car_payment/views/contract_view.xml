@@ -25,5 +25,36 @@
                 </xpath>
             </field>
         </record>
+
+        <record id="view_contract_form" model="ir.ui.view">
+            <field name="name">contract form</field>
+            <field name="model">car.contract</field>
+            <field name="inherit_id" ref="car_contract.view_contract_form"/>
+            <field name="arch" type="xml">
+                <field name="image" position="before">
+                    <div class="oe_button_box" name="button_box" groups="">
+                        <button class="oe_stat_button" type="object" name="show_payment" icon="fa-money">
+                            <field string="Payments" name="payment_count" widget="statinfo" />
+                        </button>
+                    </div>
+                    <div class="oe_button_box" name="button_box" groups="">
+                        <button class="oe_stat_button" icon="fa-money">
+                            <field string="Collect Amounts" name="payment_amount" widget="statinfo" />
+                        </button>
+                    </div>
+                    <div class="oe_button_box" name="button_box" groups="">
+                        <button class="oe_stat_button" icon="fa-money">
+                            <field string="Remain Amounts" name="remain_amount" widget="statinfo" /> <field name="currency_id" />
+                        </button>
+                    </div>
+                    <div class="oe_button_box" name="button_box" groups="">
+                        <button class="oe_stat_button" icon="fa-money">
+                            <field string="Late Amounts" name="late_amount" widget="statinfo" />
+                        </button>
+                    </div>
+                </field>
+            </field>
+        </record>
+
     </data>
 </odoo>

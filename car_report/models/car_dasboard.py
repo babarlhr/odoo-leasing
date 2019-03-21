@@ -37,6 +37,7 @@ class CarDashboard(models.Model):
 
     def get_partners_info(self):
         partners = self.env['res.partner'].search(['|',
+            ('customer', '=', True),
             ('company_id', '=', self.env.user.company_id.id),
             ('company_id', 'in', self.env.user.company_id.child_ids.ids)
         ])
@@ -73,4 +74,7 @@ class CarDashboard(models.Model):
             collect += currency_env._compute(currency, company_currency, c.payment_amount)
             amount += currency_env._compute(currency, company_currency, c.amount_depreciation)
             late += currency_env._compute(currency, company_currency, c.late_amount)
-        return {'remain': remain, 'collect': collect, 'amount': amount, 'late': late}
+        late_percent = 0.0
+        if remain:
+            late_percent = round(late / remain, 2)
+        return {'remain': remain, 'collect': collect, 'amount': amount, 'late': late, 'late_percent': late_percent}
