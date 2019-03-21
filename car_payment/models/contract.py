@@ -31,7 +31,7 @@ class Contract(models.Model):
 
     @api.multi
     @api.depends('payment_ids')
-    def _get_total_payment(self):
+    def _get_payment_count(self):
         for c in self:
             c.payment_count = len(c.payment_ids)
 

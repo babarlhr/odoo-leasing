@@ -34,22 +34,28 @@
                 <field name="image" position="before">
                     <div class="oe_button_box" name="button_box" groups="">
                         <button class="oe_stat_button" type="object" name="show_payment" icon="fa-money">
-                            <field string="Payments" name="payment_count" widget="statinfo" />
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value"><field name="payment_count" /></span>
+                                <span class="o_stat_text"> Payments</span>
+                            </div>
                         </button>
-                    </div>
-                    <div class="oe_button_box" name="button_box" groups="">
                         <button class="oe_stat_button" icon="fa-money">
-                            <field string="Collect Amounts" name="payment_amount" widget="statinfo" />
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value"><field name="payment_amount" /> <field name="currency_id" /></span>
+                                <span class="o_stat_text"> Collect Amounts</span>
+                            </div>
                         </button>
-                    </div>
-                    <div class="oe_button_box" name="button_box" groups="">
                         <button class="oe_stat_button" icon="fa-money">
-                            <field string="Remain Amounts" name="remain_amount" widget="statinfo" /> <field name="currency_id" />
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value"><field name="remain_amount" /> <field name="currency_id" /></span>
+                                <span class="o_stat_text"> Remain Amounts</span>
+                            </div>
                         </button>
-                    </div>
-                    <div class="oe_button_box" name="button_box" groups="">
                         <button class="oe_stat_button" icon="fa-money">
-                            <field string="Late Amounts" name="late_amount" widget="statinfo" />
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value"><field name="late_amount" /> <field name="currency_id" /></span>
+                                <span class="o_stat_text"> Late Amounts</span>
+                            </div>
                         </button>
                     </div>
                 </field>
