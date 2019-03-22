@@ -103,6 +103,29 @@
             </field>
         </record>
 
+        <record model="ir.ui.view" id="view_payment_graph">
+            <field name="name">payment graph</field>
+            <field name="model">car.payment</field>
+            <field name="arch" type="xml">
+                <graph string="Payments">
+                    <field name="name"/>
+                    <field name="contract_id"/>
+                    <field name="collect_amount" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_payment_pivot">
+            <field name="name">payment pivot</field>
+            <field name="model">car.payment</field>
+            <field name="arch" type="xml">
+                <pivot string="Payments">
+                    <field name="contract_id" type="row"/>
+                    <field name="collect_amount" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
         <record id="open_view_payment_list" model="ir.actions.act_window">
             <field name="name">Payments</field>
             <field name="res_model">car.payment</field>
@@ -116,7 +139,7 @@
             <field name="name">Payments</field>
             <field name="res_model">car.payment</field>
             <field name="view_type">form</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_mode">kanban,tree,form,pivot,graph</field>
             <field name="domain">[]</field>
             <field name="context">{}</field>
             <field name="view_id" eval="False"/>

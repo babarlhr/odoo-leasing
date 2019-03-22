@@ -17,3 +17,10 @@ class Payment(models.Model):
     name = fields.Char(string='Reference', size=200)
     image = fields.Binary("Photo", attachment=True, related='contract_id.image', readonly=True)
 
+    @api.model
+    def create(self, values):
+        res = super(Payment, self).create(values)
+        if not res.contract_id.remain_amount:
+            res.contract_id.state = 'close'
+        return res
+

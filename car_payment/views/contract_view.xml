@@ -21,7 +21,9 @@
             <field name="inherit_id" ref="car_contract.view_contract_kanban"/>
             <field name="arch" type="xml">
                 <xpath expr="//ul/li/field[@name='weekly_depreciation']/.." position="after">
-                    <li t-if="record.payment_amount.raw_value"><field name="payment_amount"/></li>
+                    <li t-if="record.payment_amount.raw_value">
+                        <field name="payment_amount"/>
+                    </li>
                 </xpath>
             </field>
         </record>
@@ -35,31 +37,73 @@
                     <div class="oe_button_box" name="button_box" groups="">
                         <button class="oe_stat_button" type="object" name="show_payment" icon="fa-money">
                             <div class="o_field_widget o_stat_info">
-                                <span class="o_stat_value"><field name="payment_count" /></span>
-                                <span class="o_stat_text"> Payments</span>
+                                <span class="o_stat_value">
+                                    <field name="payment_count"/>
+                                </span>
+                                <span class="o_stat_text">Payments</span>
                             </div>
                         </button>
                         <button class="oe_stat_button" icon="fa-money">
                             <div class="o_field_widget o_stat_info">
-                                <span class="o_stat_value"><field name="payment_amount" /> <field name="currency_id" /></span>
-                                <span class="o_stat_text"> Collect Amounts</span>
+                                <span class="o_stat_value">
+                                    <field name="payment_amount"/>
+                                    <field name="currency_id"/>
+                                </span>
+                                <span class="o_stat_text">Collect Amounts</span>
                             </div>
                         </button>
                         <button class="oe_stat_button" icon="fa-money">
                             <div class="o_field_widget o_stat_info">
-                                <span class="o_stat_value"><field name="remain_amount" /> <field name="currency_id" /></span>
-                                <span class="o_stat_text"> Remain Amounts</span>
+                                <span class="o_stat_value">
+                                    <field name="remain_amount"/>
+                                    <field name="currency_id"/>
+                                </span>
+                                <span class="o_stat_text">Remain Amounts</span>
                             </div>
                         </button>
                         <button class="oe_stat_button" icon="fa-money">
                             <div class="o_field_widget o_stat_info">
-                                <span class="o_stat_value"><field name="late_amount" /> <field name="currency_id" /></span>
-                                <span class="o_stat_text"> Late Amounts</span>
+                                <span class="o_stat_value">
+                                    <field name="late_amount"/>
+                                    <field name="currency_id"/>
+                                </span>
+                                <span class="o_stat_text">Late Amounts</span>
                             </div>
                         </button>
                     </div>
                 </field>
             </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_contract_graph">
+            <field name="name">contract graph</field>
+            <field name="model">car.contract</field>
+            <field name="arch" type="xml">
+                <graph string="Contracts">
+                    <field name="name"/>
+                    <field name="customer_id"/>
+                    <field name="vehicle_id"/>
+                    <field name="amount_depreciation" type="measure"/>
+                    <!--<field name="weekly_depreciation" type="measure"/>
+                    <field name="number_depreciation" type="measure"/>-->
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_contract_pivot">
+            <field name="name">contract pivot</field>
+            <field name="model">car.contract</field>
+            <field name="arch" type="xml">
+                <pivot string="Contracts">
+                    <field name="customer_id" type="row"/>
+                    <field name="vehicle_id" type="row"/>
+                    <field name="amount_depreciation" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="car_contract.open_view_contract" model="ir.actions.act_window">
+            <field name="view_mode">kanban,tree,form,pivot,graph</field>
         </record>
 
     </data>

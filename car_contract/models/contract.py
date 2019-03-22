@@ -25,7 +25,7 @@ class Contract(models.Model):
     weekly_depreciation = fields.Float(string='Weekly Depreciation', digits=dp.get_precision('Account'))
     state = fields.Selection([
         ('draft', 'Draft'),
-        ('pending', 'Pending'),
+        ('progress', 'In Progress'),
         ('close', 'Close'),
         ('cancel', 'Cancel')
     ], default='draft', string='State')

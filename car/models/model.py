@@ -17,8 +17,15 @@ class ModelVehicle(models.Model):
         image_path = get_module_resource('car', 'static/src/img', 'default_image.png')
         return tools.image_resize_image_big(open(image_path, 'rb').read().encode('base64'))
 
+    @api.model
+    def _default_image_small(self):
+        if not self.image:
+            return False
+        return tools.image_resize_image_small(self.image)
+
     name = fields.Char(string='Name', size=200, required=True)
-    image = fields.Binary("Photo")
+    image = fields.Binary(string="Photo")
+    image_small = fields.Binary(string="Image Small", attachment=True, default=lambda self: self._default_image_small)
     company_id = fields.Many2one(comodel_name='res.company', string='Company', default=lambda self: self.env.user.company_id.id)
     brand_id = fields.Many2one(comodel_name='car.brand', string='Brand')
     model_year = fields.Char(string='Year', size=4)

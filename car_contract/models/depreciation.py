@@ -43,7 +43,7 @@ class Contract(models.Model):
                 'waiting_at': waiting_date
             }
             dep_env.create(data)
-        self.write({'state': 'pending'})
+        self.write({'state': 'progress'})
 
     @api.onchange('number_depreciation', 'amount_depreciation', 'start_date', 'weekly_depreciation')
     def compute_depreciation(self):

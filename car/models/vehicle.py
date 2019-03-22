@@ -16,12 +16,20 @@ class Vehicle(models.Model):
         image_path = get_module_resource('car', 'static/src/img', 'default_image.png')
         return tools.image_resize_image_big(open(image_path, 'rb').read().encode('base64'))
 
+    @api.model
+    def _default_image_small(self):
+        if not self.image:
+            return False
+        return tools.image_resize_image_small(self.image)
+
     name = fields.Char(string='Name', size=200, required=True)
     license_plate = fields.Char(size=200)
     image = fields.Binary("Photo", attachment=True)
+    image_small = fields.Binary(string="Image Small", attachment=True, default=lambda self: self._default_image_small)
     vin_sn = fields.Char(string='Vin SN', size=200, required=True)
     model_id = fields.Many2one(comodel_name='car.model', string='Model')
     acquisition_date = fields.Date()
+    arrival_date = fields.Date(string="Arrival Date")
     color = fields.Char(string='Color', size=10)
     cost = fields.Float(string='Cost', digits=dp.get_precision('Account'))
     odometer_start = fields.Integer(string='Start Odometer')
@@ -54,6 +62,7 @@ class Vehicle(models.Model):
     buy_place = fields.Char(string='Buy Place', size=200)
     company_id = fields.Many2one(comodel_name='res.company', string='Company', default=lambda self: self.env.user.company_id.id)
     assigned_id = fields.Many2one(comodel_name='res.users', string='Users')
+    is_create = fields.Boolean(string='Is Created?', default=False)
 
     @api.multi
     def set_validate(self):
@@ -72,6 +81,7 @@ class Vehicle(models.Model):
     def create(self, vals_list):
         vals_list['name'] = self.env['ir.sequence'].get('car.vehicle') or '/'
         res = super(Vehicle, self).create(vals_list)
+        res.is_create = True
         return res
 
 
