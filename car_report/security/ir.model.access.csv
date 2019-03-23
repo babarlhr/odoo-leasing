@@ -4,4 +4,3 @@ access_car_report_project,car.dashboard,model_car_dashboard,car.group_car_projec
 access_car_report_purchase,car.dashboard,model_car_dashboard,car.group_car_purchase,1,1,1,1
 access_car_report_country,car.dashboard,model_car_dashboard,car.group_car_country,1,1,1,1
 access_car_report_follow,car.dashboard,model_car_dashboard,car.group_car_follow,1,1,1,1
-access_car_report_cashier,car.dashboard,model_car_dashboard,car.group_car_cashier,1,1,1,1
