@@ -8,11 +8,12 @@
             <field name="inherit_id" ref="account.res_config_settings_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='group_multi_currency']/../.." position="after">
-                    <div class="col-12 col-lg-6 o_setting_box">
-                        <label for="id" string="Currency Rate" attrs="{'invisible': [('group_multi_currency', '!=', True)]}" />
-                        <div attrs="{'invisible': [('group_multi_currency', '!=', True)]}">
+                    <div class="col-12 col-lg-6 o_setting_box" groups="currency_rate.group_currency_rate">
+                        <label for="id" string="Currency Rate" attrs="{'invisible': [('group_multi_currency', '!=', True)]}"
+                               groups="currency_rate.group_currency_rate" />
+                        <div attrs="{'invisible': [('group_multi_currency', '!=', True)]}" groups="currency_rate.group_currency_rate">
                             <div>
-                                <label for="currency_interval_unit" />
+                                <label for="currency_interval_unit" groups="currency_rate.group_currency_rate" />
                                 <field name="currency_interval_unit" class="oe_inline"
                                        groups="currency_rate.group_currency_rate"/>
                                 <button string="Update Now"
@@ -21,12 +22,12 @@
                                         class="oe_link" groups="currency_rate.group_currency_rate"/>
                             </div>
                             <div>
-                                <label for="currency_next_execution_date" />
+                                <label for="currency_next_execution_date" groups="currency_rate.group_currency_rate" />
                                 <field name="currency_next_execution_date" class="oe_inline"
                                        groups="currency_rate.group_currency_rate"/>
                             </div>
                             <div>
-                                <label for="currency_provider" />
+                                <label for="currency_provider" groups="currency_rate.group_currency_rate" />
                                 <field name="currency_provider" class="oe_inline"
                                        groups="currency_rate.group_currency_rate"/>
                             </div>
