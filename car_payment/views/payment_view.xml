@@ -8,11 +8,11 @@
             <field name="arch" type="xml">
                 <form string="Payment">
                     <sheet>
-                        <field name="image" widget='image' class="oe_avatar" options='{"preview_image":"image"}'/>
+                        <!--<field name="image" widget='image' class="oe_avatar" options='{"preview_image":"image"}'/>-->
                         <div class="oe_title">
                             <label for="name" class="oe_edit_only"/>
                             <h1>
-                                <field name="name" placeholder="payment's reference"/>
+                                <field name="name" placeholder="payment's reference" readonly="1"/>
                             </h1>
                         </div>
                         <group col="4" colspan="4">
