@@ -24,6 +24,7 @@ class ResCompany(models.Model):
         default='manually', string='Interval Unit')
     currency_provider = fields.Selection([('yahoo', 'Yahoo'), ('ecb', 'European Central Bank'), ('openexchange', 'Open Exchange Rate')], default='openexchange', string='Service Provider')
     currency_next_execution_date = fields.Date(string="Next Execution Date")
+    openexchange_api_key = fields.Char(size=254)
 
     @api.multi
     def update_currency_rates(self):
@@ -38,7 +39,6 @@ class ResCompany(models.Model):
                 res = company._update_currency_openexchange()
             if not res:
                 raise UserError(_('Unable to connect to the online exchange rate platform. The web service may be temporary down. Please try again in a moment.'))
-
 
     def _update_currency_ecb(self):
         ''' This method is used to update the currencies by using ECB service provider.
@@ -123,7 +123,7 @@ class ResCompany(models.Model):
         currencies = Currency.search([])
         for company in self:
             base_currency = company.currency_id.name
-            open_url = 'https://openexchangerates.org/api/latest.json?app_id=bd669c866b924df6887ff688985d1951'
+            open_url = 'https://openexchangerates.org/api/latest.json?app_id=' + company.openexchange_api_key
             try:
                 result = requests.get(open_url)
             except:

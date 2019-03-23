@@ -14,6 +14,7 @@
                    <field name="currency_interval_unit"/>
                    <field name="currency_provider"/>
                    <field name="currency_next_execution_date"/>
+                   <field name="openexchange_api_key"/>
                </xpath>
 
            </field>
