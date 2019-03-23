@@ -33,6 +33,22 @@
             sequence="1"/>
 
         <menuitem
+            id="menu_car_users"
+            name="Users"
+            groups="car.group_car_wallet,car.group_car_project"
+            parent="menu_car_setting"
+            action="base.action_res_users"
+            sequence="4"/>
+
+        <menuitem
+            id="menu_car_company"
+            name="Companies"
+            groups="car.group_car_wallet,car.group_car_project"
+            parent="menu_car_setting"
+            action="base.action_res_company_form"
+            sequence="5"/>
+
+        <menuitem
             id="menu_car_customer"
             name="Customers"
             groups="car.group_car_follow,car.group_car_wallet,car.group_car_project,car.group_car_country"

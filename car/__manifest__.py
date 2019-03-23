@@ -14,7 +14,7 @@ The specific and easy-to-use car system in Odoo allows you to keep track of your
     'website': '',
     'author': "Cedric FOWOUE",
     'images': ['images/accounts.jpeg'],
-    'depends': ['base', 'mail', 'currency_rate_live'],
+    'depends': ['base', 'mail'],
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',

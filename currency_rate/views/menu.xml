@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+        <menuitem
+            id="menu_currency_root"
+            name="Exchange"
+            groups="currency_rate.group_currency_rate"
+            sequence="3"/>
+
+        <menuitem
+            id="menu_currency_main"
+            name="Settings"
+            groups="currency_rate.group_currency_rate"
+            parent="currency_rate.menu_currency_root"
+            sequence="1"/>
+
+        <menuitem
+            id="menu_currency_setting"
+            name="Settings"
+            groups="currency_rate.group_currency_rate"
+            parent="currency_rate.menu_currency_main"
+            action="currency_rate.open_res_config_setting_act_window"
+            sequence="1"/>
+
+    </data>
+</odoo>
