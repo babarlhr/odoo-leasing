@@ -9,7 +9,28 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='group_multi_currency']/../.." position="after">
                     <div class="col-12 col-lg-6 o_setting_box">
-                        he
+                        <label for="id" string="Currency Rate" attrs="{'invisible': [('group_multi_currency', '!=', True)]}" />
+                        <div attrs="{'invisible': [('group_multi_currency', '!=', True)]}">
+                            <div>
+                                <label for="currency_interval_unit" />
+                                <field name="currency_interval_unit" class="oe_inline"
+                                       groups="currency_rate.group_currency_rate"/>
+                                <button string="Update Now"
+                                        name="update_currency_rates"
+                                        type="object"
+                                        class="oe_link" groups="currency_rate.group_currency_rate"/>
+                            </div>
+                            <div>
+                                <label for="currency_next_execution_date" />
+                                <field name="currency_next_execution_date" class="oe_inline"
+                                       groups="currency_rate.group_currency_rate"/>
+                            </div>
+                            <div>
+                                <label for="currency_provider" />
+                                <field name="currency_provider" class="oe_inline"
+                                       groups="currency_rate.group_currency_rate"/>
+                            </div>
+                        </div>
                     </div>
                 </xpath>
             </field>
