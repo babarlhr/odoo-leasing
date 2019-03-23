@@ -12,10 +12,10 @@
     ],
     'data': [
         'security/security.xml',
-        'views/config_setting_view.xml',
-        'views/service_cron_data.xml',
         'views/company_view.xml',
-        'views/menu.xml',
+        # 'views/config_setting_view.xml',
+        'views/service_cron_data.xml',
+        # 'views/menu.xml',
     ],
     'installable': True,
     'auto_install': True,
