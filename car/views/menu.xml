@@ -33,6 +33,14 @@
             sequence="1"/>
 
         <menuitem
+            id="menu_car_currency"
+            name="Currencies"
+            groups="car.group_car_wallet,car.group_car_project"
+            parent="menu_car_setting"
+            action="base.action_currency_form"
+            sequence="3"/>
+
+        <menuitem
             id="menu_car_users"
             name="Users"
             groups="car.group_car_wallet,car.group_car_project"
