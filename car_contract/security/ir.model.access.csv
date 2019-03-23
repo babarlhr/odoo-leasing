@@ -3,6 +3,7 @@ access_car_contract_country,car.contract,model_car_contract,car.group_car_countr
 access_car_contract_follow,car.contract,model_car_contract,car.group_car_follow,1,1,1,1
 access_car_contract_wallet,car.contract,model_car_contract,car.group_car_wallet,1,1,1,1
 access_car_contract_project,car.contract,model_car_contract,car.group_car_project,1,1,1,1
+access_car_contract_cashier,car.contract,model_car_contract,car.group_car_cashier,1,0,0,0
 
 access_car_depreciation_country,car.depreciation,model_car_depreciation,car.group_car_country,1,1,1,1
 access_car_depreciation_follow,car.depreciation,model_car_depreciation,car.group_car_follow,1,1,1,1

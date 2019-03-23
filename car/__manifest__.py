@@ -23,6 +23,7 @@ The specific and easy-to-use car system in Odoo allows you to keep track of your
         'views/vehicle_view.xml',
         'views/menu.xml',
         'views/assign_user_view.xml',
+        'sequence/car_sequence.xml',
     ],
     'demo': [
         # 'demo/account_demo.xml',

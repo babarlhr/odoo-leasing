@@ -23,7 +23,7 @@
                   name="Dashboard"
                   action="action_car_report"
                   parent="car.menu_car_root"
-                  groups="car.group_car_project,car.group_car_wallet,car.group_car_purchase,car.group_car_clearance,car.group_car_country,car.group_car_follow,car.group_car_cashier"
+                  groups="car.group_car_project,car.group_car_wallet,car.group_car_clearance,car.group_car_country,car.group_car_follow"
                   sequence="0"/>
 
         <!-- CAR Dashboard Assests. We are making changes on assets backend -->

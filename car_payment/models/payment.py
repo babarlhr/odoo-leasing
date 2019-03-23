@@ -19,6 +19,7 @@ class Payment(models.Model):
 
     @api.model
     def create(self, values):
+        values['name'] = self.env['ir.sequence'].get('car.payment') or '/'
         res = super(Payment, self).create(values)
         if not res.contract_id.remain_amount:
             res.contract_id.state = 'close'

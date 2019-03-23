@@ -7,10 +7,10 @@ access_car_model_purchase,car.model,model_car_model,group_car_purchase,1,1,1,1
 access_car_model_wallet,car.model,model_car_model,group_car_wallet,1,1,1,1
 access_car_model_project,car.model,model_car_model,group_car_project,1,1,1,1
 
-access_car_vehicle_follow,car.vehicle,model_car_vehicle,group_car_follow,1,1,1,1
-access_car_vehicle_country,car.vehicle,model_car_vehicle,group_car_country,1,1,1,1
+access_car_vehicle_follow,car.vehicle,model_car_vehicle,group_car_follow,1,1,0,1
+access_car_vehicle_country,car.vehicle,model_car_vehicle,group_car_country,1,1,0,1
 access_car_vehicle_cashier,car.vehicle,model_car_vehicle,group_car_cashier,1,0,0,0
-access_car_vehicle_clearance,car.vehicle,model_car_vehicle,group_car_clearance,1,1,1,0
+access_car_vehicle_clearance,car.vehicle,model_car_vehicle,group_car_clearance,1,1,0,0
 access_car_vehicle_purchase,car.vehicle,model_car_vehicle,group_car_purchase,1,1,1,1
-access_car_vehicle_wallet,car.vehicle,model_car_vehicle,group_car_wallet,1,1,1,1
+access_car_vehicle_wallet,car.vehicle,model_car_vehicle,group_car_wallet,1,1,0,1
 access_car_vehicle_project,car.vehicle,model_car_vehicle,group_car_project,1,1,1,1
