@@ -19,7 +19,7 @@
         <menuitem
             id="menu_car_brand"
             name="Brands"
-            groups="car.group_car_purchase,car.group_car_wallet,car.group_car_project,car.group_car_clearance"
+            groups="car.group_car_country,car.group_car_follow,car.group_car_purchase,car.group_car_wallet,car.group_car_project,car.group_car_clearance"
             parent="menu_car_setting"
             action="car.open_view_brand"
             sequence="0"/>

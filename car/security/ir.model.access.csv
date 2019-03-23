@@ -2,7 +2,11 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_car_brand_purchase,car.brand,model_car_brand,group_car_purchase,1,1,1,1
 access_car_brand_wallet,car.brand,model_car_brand,group_car_wallet,1,1,1,1
 access_car_brand_project,car.brand,model_car_brand,group_car_project,1,1,1,1
+access_car_brand_country,car.model,model_car_brand,group_car_country,1,1,1,1
+access_car_brand_follow,car.model,model_car_brand,group_car_follow,1,1,1,1
 
+access_car_model_country,car.model,model_car_model,group_car_country,1,1,1,1
+access_car_model_follow,car.model,model_car_model,group_car_follow,1,1,1,1
 access_car_model_purchase,car.model,model_car_model,group_car_purchase,1,1,1,1
 access_car_model_wallet,car.model,model_car_model,group_car_wallet,1,1,1,1
 access_car_model_project,car.model,model_car_model,group_car_project,1,1,1,1
