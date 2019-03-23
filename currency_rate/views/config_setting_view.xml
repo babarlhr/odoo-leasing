@@ -8,7 +8,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='group_multi_currency']/../.."  position="after">
                     <div class="col-12 col-lg-6 o_setting_box" groups="currency_rate.group_currency_rate">
-                        <label for="id" string="Live Currency Rate" attrs="{'invisible': [('group_multi_currency', '!=', True)]}" groups="group_currency_rate"/>
+                        <label string="Currency Rate" attrs="{'invisible': [('group_multi_currency', '!=', True)]}" groups="group_currency_rate"/>
                         <div attrs="{'invisible': [('group_multi_currency', '!=', True)]}">
                             <div>
                                 <label for="currency_interval_unit" groups="group_currency_rate"/>
