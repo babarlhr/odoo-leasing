@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <data>
 
-        <record id="view_account_currency_config_settings_inherit" model="ir.ui.view">
+        <record id="currency_rate.view_account_currency_config_settings_inherit" model="ir.ui.view">
             <field name="name">account settings</field>
             <field name="model">res.config.settings</field>
             <field name="inherit_id" ref="account.res_config_settings_view_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='group_multi_currency']/../.."  position="after">
+                <xpath expr="//field[@name='group_multi_currency']/../.." position="after">
                     <div class="col-12 col-lg-6 o_setting_box" groups="currency_rate.group_currency_rate">
-                        <label string="Currency Rate" attrs="{'invisible': [('group_multi_currency', '!=', True)]}" groups="group_currency_rate"/>
+                        <label string="Currency Rate" attrs="{'invisible': [('group_multi_currency', '!=', True)]}"
+                               groups="group_currency_rate"/>
                         <div attrs="{'invisible': [('group_multi_currency', '!=', True)]}">
                             <div>
                                 <label for="currency_interval_unit" groups="group_currency_rate"/>
-                                <field name="currency_interval_unit" class="oe_inline" groups="currency_rate.group_currency_rate"/>
+                                <field name="currency_interval_unit" class="oe_inline"
+                                       groups="currency_rate.group_currency_rate"/>
                                 <button string="Update Now"
-                                    name="update_currency_rates"
-                                    type="object"
-                                    class="oe_link" groups="currency_rate.group_currency_rate" />
+                                        name="update_currency_rates"
+                                        type="object"
+                                        class="oe_link" groups="currency_rate.group_currency_rate"/>
                             </div>
                             <div>
                                 <label for="currency_next_execution_date" groups="currency_rate.group_currency_rate"/>
-                                <field name="currency_next_execution_date" class="oe_inline" groups="currency_rate.group_currency_rate"/>
+                                <field name="currency_next_execution_date" class="oe_inline"
+                                       groups="currency_rate.group_currency_rate"/>
                             </div>
                             <div>
                                 <label for="currency_provider" groups="currency_rate.group_currency_rate"/>
-                                <field name="currency_provider" class="oe_inline" groups="currency_rate.group_currency_rate"/>
+                                <field name="currency_provider" class="oe_inline"
+                                       groups="currency_rate.group_currency_rate"/>
                             </div>
                         </div>
                     </div>
@@ -40,4 +45,5 @@
             <field name="target">inline</field>
         </record>
 
+    </data>
 </odoo>
