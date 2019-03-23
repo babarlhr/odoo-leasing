@@ -160,7 +160,6 @@ class ResCompany(models.Model):
 
 class CurrencyConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
-    _description = 'Setting for currency rate'
 
     currency_interval_unit = fields.Selection(related="company_id.currency_interval_unit",)
     currency_provider = fields.Selection(related="company_id.currency_provider",)
